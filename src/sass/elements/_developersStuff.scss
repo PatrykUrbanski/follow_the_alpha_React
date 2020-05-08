@@ -1,0 +1,52 @@
+.info {
+  margin-top: 50px;
+
+  &__content {
+    h1 {
+      font-size: 2rem;
+    }
+
+    &__tech {
+      display: flex;
+      justify-content: center;
+
+      ul {
+        display: flex;
+        width: 50%;
+        flex-wrap: wrap;
+        height: 100%;
+        transition: 1s;
+
+        li {
+          font-size: 4rem;
+          padding: 20px;
+
+          i {
+            transition: 1s;
+          }
+
+          .fa-js-square {
+            &:hover {
+              color: yellow;
+            }
+          }
+
+          .fa-react {
+            &:hover {
+              color: blue;
+            }
+          }
+
+          .fa-sass {
+            &:hover {
+              color: purple;
+            }
+          }
+        }
+      }
+    }
+    &__additional {
+
+    }
+  }
+}

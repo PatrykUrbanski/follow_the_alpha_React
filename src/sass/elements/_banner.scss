@@ -1,0 +1,75 @@
+.banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 90px);
+  position: relative;
+  .wordCarousel {
+    overflow: hidden;
+    position: relative;
+    font-size: 3rem;
+
+    &__wrap {
+      overflow: hidden;
+      position: relative;
+      height: 65px;
+      margin-top: 20px;
+
+      .flip4 {
+        animation-name: flip4;
+        animation-duration: 13s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+
+        .list {
+          height: 65px;
+          position: relative;
+
+          &__word {
+            display: block;
+            height: 45px;
+            margin-bottom: 45px;
+            text-align: center;
+
+          }
+        }
+      }
+    }
+  }
+  .arrow {
+    position: absolute;
+    bottom: 50px;
+    left: calc(50% - 65px / 2);
+    border: 2px solid $main-text;
+    border-radius: 50%;
+    padding: 18px 25px;
+    transition: .3s;
+    &:hover {
+      animation: pulse 1s infinite;
+      box-shadow: 0 0 2px 2px $main-text;
+    }
+    span {
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-bottom: 3px solid $main-text;
+      border-right: 3px solid $main-text;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+
+@keyframes flip4 {
+  0% { margin-top: -360px; }
+  5% { margin-top: -270px; }
+  25% { margin-top: -270px; }
+  30% { margin-top: -180px; }
+  50% { margin-top: -180px; }
+  55% { margin-top: -90px; }
+  75% { margin-top: -90px; }
+  80% { margin-top: 0; }
+  99.99% { margin-top: 0; }
+  100% { margin-top: -270px; }
+}

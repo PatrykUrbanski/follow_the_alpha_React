@@ -1,0 +1,18 @@
+@import "settings/mixins";
+
+
+//generic
+@import "generic/reset";
+@import "generic/grid";
+@import "generic/var";
+@import "generic/all";
+
+//elements
+@import "elements/header";
+@import "elements/banner";
+@import "elements/journalApp";
+@import "elements/strategies";
+@import "elements/developersStuff";
+@import "elements/typeEffect";
+
+@import "settings/pageAnimation";
