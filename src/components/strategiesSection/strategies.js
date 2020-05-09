@@ -1,8 +1,11 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
+import {StrategiesAlgo} from "./strategiesAlgo";
 
 export const Strategies = () => {
     const [cardListHeight, setCardListHeight] = useState(false);
     const [baseCardName, setBaseCardName] = useState("Benchmark SPY");
+    const [strategyInfoBtn, setStrategyInfoBtn] = useState(true);
+    const [strategyAnime, setStrategyAnime] = useState("");
 
     const strategiesList = ["Benchmark SPY", "Momentum", "Mean-Reversion", "Value portfolio", "Growth portfolio"];
 
@@ -10,19 +13,37 @@ export const Strategies = () => {
         e.preventDefault();
         setCardListHeight(!cardListHeight);
     };
-
     const handleChangeStrategy = (e) => {
         e.preventDefault();
         const {name} = e.target;
         setBaseCardName(name);
         setCardListHeight(!cardListHeight);
     };
+    const handleStrategyInfoBtn = (e) => {
+        e.preventDefault();
+        setStrategyInfoBtn(!strategyInfoBtn);
+    };
+
+    const displayStrategyAnime = () => {
+        if (window.pageYOffset > 400) {
+            setStrategyAnime("displayAnime");
+            window.removeEventListener("scroll", displayStrategyAnime)
+        }
+    };
+    window.addEventListener("scroll", displayStrategyAnime);
+
+
+
+
+
+
+
 
 
 
     return (
         <>
-            <section className="strategies container">
+            <section className={`strategies container ${strategyAnime}`}>
                 <p id="strategiesPage">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur
                     dicta itaque laboriosam minima sed ut voluptates? Culpa doloribus labore, nobis sequi suscipit vero.
                     Distinctio nemo porro ratione tenetur vel!</p>
@@ -45,9 +66,9 @@ export const Strategies = () => {
 
                 <div className="strategies__info">
                     <ul>
-                        <li className="infoBtn">Strategy methodology
-                            <i className="showMethBtn fas fa-chevron-circle-right"></i>
-                            <i className="hideMethBtn fas fa-times-circle"></i>
+                        <li className="infoBtn" onClick={handleStrategyInfoBtn}>Strategy methodology
+                            <i className="fas fa-chevron-circle-right" style={{display: `${strategyInfoBtn ? "inline-block" : "none"}`}}></i>
+                            <i className="fas fa-times-circle" style={{display: `${strategyInfoBtn ? "none" : "inline-block"}`}}></i>
                         </li>
                         <li>Total return:<span>256%</span></li>
                         <li>Annual average return:<span>12%</span></li>
@@ -57,7 +78,7 @@ export const Strategies = () => {
                         <li>CAGR:<span>3343</span></li>
                         <li>CAGR:<span>1212</span></li>
                     </ul>
-                    <div className="methodologyBox">
+                    <div className="methodologyBox" style={{height: `${strategyInfoBtn ? "0" : "100%"}`}}>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, ipsam nulla obcaecati odio
                             tempore vero voluptatum. At dicta enim impedit natus neque perspiciatis sapiente totam.
                             Magni modi neque soluta voluptatem.</p>
@@ -66,7 +87,7 @@ export const Strategies = () => {
 
                 <div className="strategies__chart">
                     <div className="strategies__chart__content">
-                        <canvas id="strategyChart"></canvas>
+                       <StrategiesAlgo/>
                     </div>
                 </div>
             </section>
