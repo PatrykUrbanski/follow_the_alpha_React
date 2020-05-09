@@ -1,13 +1,9 @@
 import React, {useEffect, useState} from "react";
-import {Line} from "react-chartjs-2";
+import {ChartDisplay} from "./ChartDisplay";
 
 export const SPYBenchmarkStrategy = ({quotes, dates}) => {
-
     const [prices, setPrices] = useState(false);
     const [dateElems, setDateElems] = useState(false);
-
-
-
 
     useEffect(() => {
         let usdReturn = [];
@@ -21,34 +17,12 @@ export const SPYBenchmarkStrategy = ({quotes, dates}) => {
         setDateElems(dateArray)
     }, []);
 
-    if (!prices) return null;
-    if (!dateElems) return null;
-
-
-
-    const lineChart = {
-        labels: [...dateElems],
-        datasets: [
-            {
-                label: 'Cumulative value of investment in %',
-                fill: "origin",
-                backgroundColor: "rgba(233, 74, 69, .5)",
-                borderColor: "#e94a45",
-                borderWidth: "2",
-                borderCapStyle: "round",
-                pointBorderWidth: "0",
-                pointBorderColor: "none",
-                pointStyle: "line",
-                data: [...prices]
-            }
-        ]
-    };
-
+    if (!prices || !dateElems) return null;
 
 
     return (
         <>
-            <Line data={lineChart}/>
+            <ChartDisplay dates={dateElems} prices={prices}/>
         </>
     )
 

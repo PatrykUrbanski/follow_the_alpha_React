@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {getData, GetSymbols} from "../api/api"
 import {SPYBenchmarkStrategy} from "./spyBenchmarkStrategy";
+import {AllWeatherStrategy} from "./allWeatherStrategy";
 
 export const StrategiesAlgo = () => {
     const [symbol, setSymbol] = useState("SPY");
@@ -26,8 +27,8 @@ export const StrategiesAlgo = () => {
 
 
 
-    if (!SPY) return null;
-    if (!SPYDates) return null;
+    if (!SPY || !SPYDates) return null;
+
 
 
 
