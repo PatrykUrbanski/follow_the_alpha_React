@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {ChartDisplay} from "./ChartDisplay";
+import {ChartDisplay_strategies} from "../chart/ChartDisplay_strategies";
 
 export const SPYBenchmarkStrategy = ({quotes, dates}) => {
     const [prices, setPrices] = useState(false);
@@ -22,7 +22,7 @@ export const SPYBenchmarkStrategy = ({quotes, dates}) => {
 
     return (
         <>
-            <ChartDisplay dates={dateElems} prices={prices}/>
+            <ChartDisplay_strategies dates={dateElems} prices={prices}/>
         </>
     )
 

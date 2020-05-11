@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Line} from "react-chartjs-2";
 import {getData} from "../api/api";
+import {JournalTable} from "./journalTable";
 
 export const JournalApp = () => {
     const [trades, setTrades] = useState(false);
@@ -64,7 +65,6 @@ export const JournalApp = () => {
     const handleSendForm = (e) => {
         e.preventDefault();
         if (!symbol || !size || !getIn || !getOut) setErrorMsg(true);
-        console.log(symbol, longShort, size, getIn, getOut);
 
         let allTrades = JSON.parse(localStorage.getItem("trades"));
         if (allTrades === null) {
@@ -81,10 +81,10 @@ export const JournalApp = () => {
             duration: getDays(getIn, getOut),
         };
 
-
         getReturnInUsd((Date.parse(getIn) / 1000), (Date.parse(getOut) / 1000), symbol, newTrade);
 
-        e.target.reset();
+
+
 
 
     };
@@ -123,31 +123,7 @@ export const JournalApp = () => {
                 </div>
             </section>
 
-            <section className="tradeTable">
-                <div className="tradeTable__content container">
-                    <h2>Recent Trades</h2>
-                    <table>
-                        <thead>
-                        <tr className="row">
-                            <th className="col-1">Id</th>
-                            <th className="col-4">Trade info</th>
-                            <th className="col-3">Return</th>
-                            <th className="col-2">Duration (days)</th>
-                            <th className="col-1">Size</th>
-                            <th className="col-1"/>
-                        </tr>
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                        <tfoot>
-                        <tr className="row">
-                            <td className="col-12">Cumulative return <span id="cumReturn"/></td>
-                        </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </section>
+            <JournalTable/>
         </>
     )
 };

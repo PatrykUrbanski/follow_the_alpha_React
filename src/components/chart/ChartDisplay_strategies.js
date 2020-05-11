@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Line} from "react-chartjs-2";
 
 
-export const ChartDisplay = ({dates, prices}) => {
+export const ChartDisplay_strategies = ({dates, prices}) => {
     const lineChart = {
         labels: [...dates],
         datasets: [

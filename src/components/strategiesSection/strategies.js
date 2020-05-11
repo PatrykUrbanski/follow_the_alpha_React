@@ -53,7 +53,7 @@ export const Strategies = () => {
                 <div className="strategies__cards">
                     <a href="#" className="base card" onClick={handleShowCards}>
                         <span>{baseCardName}</span>
-                        <i className="fas fa-angle-down"></i>
+                        <i className="fas fa-angle-down"/>
                     </a>
                     <ul className="card-list" style={{height: `${cardListHeight ? (strategiesList.length) * 60 + "px" : "0"}`}}>
                         {strategiesList.map((strategyElem, index) =>
@@ -67,8 +67,8 @@ export const Strategies = () => {
                 <div className="strategies__info">
                     <ul>
                         <li className="infoBtn" onClick={handleStrategyInfoBtn}>Strategy methodology
-                            <i className="fas fa-chevron-circle-right" style={{display: `${strategyInfoBtn ? "inline-block" : "none"}`}}></i>
-                            <i className="fas fa-times-circle" style={{display: `${strategyInfoBtn ? "none" : "inline-block"}`}}></i>
+                            <i className="fas fa-chevron-circle-right" style={{display: `${strategyInfoBtn ? "inline-block" : "none"}`}}/>
+                            <i className="fas fa-times-circle" style={{display: `${strategyInfoBtn ? "none" : "inline-block"}`}}/>
                         </li>
                         <li>Total return:<span>256%</span></li>
                         <li>Annual average return:<span>12%</span></li>
