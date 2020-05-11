@@ -29,7 +29,7 @@ export const JournalTable = () => {
                                 <th className="col-3">{trade.resultValue}</th>
                                 <th className="col-2">{trade.duration}</th>
                                 <th className="col-1">{trade.size}</th>
-                                <th className="col-1"><i className="fas fa-trash"/></th>
+                                <th className="col-1"><i name={trade.id} className="fas fa-trash"/></th>
                             </tr>
                         )
                         })}
@@ -44,7 +44,6 @@ export const JournalTable = () => {
                 </div>
             </section>
 
-            {/*<JournalChart/>*/}
         </>
     )
 }

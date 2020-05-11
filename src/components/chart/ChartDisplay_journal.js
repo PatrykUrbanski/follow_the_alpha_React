@@ -12,9 +12,10 @@ export const ChartDisplay_journal = ({dates, prices}) => {
                 backgroundColor: "transparent",
                 borderWidth: "2",
                 borderCapStyle: "round",
-                pointBorderWidth: "0",
+                pointBorderWidth: "2",
+                pointBackgroundColor: "#2E82D5",
                 pointBorderColor: "none",
-                pointStyle: "line",
+                pointStyle: "circle",
                 data: [0, ...prices]
             }
         ]
@@ -22,7 +23,11 @@ export const ChartDisplay_journal = ({dates, prices}) => {
 
     return (
         <>
-            <Line data={lineChart}/>
+            <div className={"chart container"}>
+                <div className={"chart__content"}>
+                    <Line data={lineChart}/>
+                </div>
+            </div>
         </>
     )
-}
+};
