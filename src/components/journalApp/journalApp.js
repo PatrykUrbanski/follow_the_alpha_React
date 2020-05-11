@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
-import {Line} from "react-chartjs-2";
 import {getData} from "../api/api";
 import {JournalTable} from "./journalTable";
+import {JournalChart} from "./journalChart";
 
 export const JournalApp = () => {
     const [trades, setTrades] = useState(false);
@@ -45,11 +45,13 @@ export const JournalApp = () => {
                         let tradeReturnValue = parseFloat((data.c[data.c.length - 1] - data.c[0]) * newTrade.size).toFixed(2).toString() + " $";
                         newTrade.resultValue = tradeReturnValue;
                         saveTradeToLS(newTrade);
+                        setTrades(newTrade);
                         return setTradeReturn(tradeReturnValue)
                     } else if (newTrade.longShort === "short") {
                         let tradeReturnValue = parseFloat(data.c[0] - data.c[data.c.length - 1] * newTrade.size).toFixed(2).toString() + " $";
                         newTrade.resultValue = tradeReturnValue;
                         saveTradeToLS(newTrade);
+                        setTrades(newTrade);
                         return setTradeReturn(tradeReturnValue)
                     }
                 }
@@ -82,6 +84,8 @@ export const JournalApp = () => {
         };
 
         getReturnInUsd((Date.parse(getIn) / 1000), (Date.parse(getOut) / 1000), symbol, newTrade);
+
+
 
 
 
@@ -124,6 +128,7 @@ export const JournalApp = () => {
             </section>
 
             <JournalTable/>
+            <JournalChart trades={trades}/>
         </>
     )
 };

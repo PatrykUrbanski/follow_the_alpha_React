@@ -22,7 +22,7 @@ export const JournalTable = () => {
                         </tr>
                         </thead>
                         <tbody>
-                        {allTrades.map(trade => { return (
+                        {allTrades != null && allTrades.map(trade => { return (
                             <tr key={`${trade.id}-row`} className="row">
                                 <th className="col-1">{trade.id}</th>
                                 <th className="col-4">{trade.symbol} {trade.longShort}</th>
@@ -44,7 +44,7 @@ export const JournalTable = () => {
                 </div>
             </section>
 
-            <JournalChart/>
+            {/*<JournalChart/>*/}
         </>
     )
 }

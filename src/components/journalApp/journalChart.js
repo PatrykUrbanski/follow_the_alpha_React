@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {ChartDisplay_journal} from "../chart/ChartDisplay_journal";
 
-export const JournalChart = () => {
+export const JournalChart = ({trades}) => {
     const [returnArray, setReturnArray] = useState([]);
     const [datesArray, setDatesArray] = useState([]);
 
@@ -29,13 +29,16 @@ export const JournalChart = () => {
         let allTrades = JSON.parse(localStorage.getItem("trades"));
         let tempReturnArr = [];
         let tempDatesArr = [];
-        allTrades.forEach(function (trade) {
+        if (allTrades != null) {
+            allTrades.forEach(function (trade) {
             tempDatesArr.push(trade.getOut);
             tempReturnArr.push(parseFloat(trade.resultValue));
         });
+    }
         setReturnArray(tempReturnArr);
         setDatesArray(tempDatesArr);
-    }, []);
+    }, [trades]);
+
 
 
 
