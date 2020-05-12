@@ -1,7 +1,9 @@
 
 import React from 'react';
 import Swiper from 'react-id-swiper';
-const MutipleSlidesPerView = () => {
+
+
+export const EducationSwiper = () => {
     const params = {
         effect: 'coverflow',
         grabCursor: true,
@@ -17,7 +19,7 @@ const MutipleSlidesPerView = () => {
         pagination: {
             el: '.swiper-pagination'
         }
-    }
+    };
 
     return (
         <>
@@ -41,4 +43,3 @@ const MutipleSlidesPerView = () => {
 
     )
 };
-export default MutipleSlidesPerView;
