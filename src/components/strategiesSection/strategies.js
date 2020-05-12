@@ -34,13 +34,6 @@ export const Strategies = () => {
 
 
 
-
-
-
-
-
-
-
     return (
         <>
             <section className={`strategies container ${strategyAnime}`}>

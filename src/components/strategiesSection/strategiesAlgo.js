@@ -35,6 +35,8 @@ export const StrategiesAlgo = () => {
     return (
         <>
             <SPYBenchmarkStrategy quotes={SPY} dates={SPYDates}/>
+            {/*<AllWeatherStrategy dates={SPYDates}/>*/}
+
         </>
     )
 }
