@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {ChartDisplay_strategies} from "../chart/ChartDisplay_strategies";
 import {getData} from "../api/api";
 
-export const GrowthStrategy = ({dates}) => {
+export const GrowthStrategy = ({dates, callback}) => {
 
     const [XLKReturn, setXLKReturn] = useState(false);
     const [VHTReturn, setVHTReturn] = useState(false);
@@ -56,6 +56,11 @@ export const GrowthStrategy = ({dates}) => {
     for (let i = 0; i < XLKUsdReturn.length; i++) {
         totalReturn.push((parseFloat(XLKUsdReturn[i]) * 0.4 + parseFloat(VHTUsdReturn[i]) * 0.3 + parseFloat(IBBUsdReturn[i]) * 0.3))
     }
+
+
+    callback(totalReturn);
+
+
 
 
     return (

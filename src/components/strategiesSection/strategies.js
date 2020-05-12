@@ -1,14 +1,20 @@
 import React, {useEffect, useState} from "react";
 import {StrategiesAlgo} from "./strategiesAlgo";
+import {std} from "mathjs";
 
 export const Strategies = () => {
+
+
+    const [totalReturn, setTotalReturn] = useState(false);
+    const [stDev, setStDev] = useState(false);
+
     const [cardListHeight, setCardListHeight] = useState(false);
     const [baseCardName, setBaseCardName] = useState("Benchmark SPY");
     const [strategyInfoBtn, setStrategyInfoBtn] = useState(true);
     const [strategyAnime, setStrategyAnime] = useState("");
 
-    const strategiesList = ["Benchmark SPY", "Momentum", "Mean-Reversion", "Value portfolio", "Growth portfolio"];
-
+    const strategiesList = ["Benchmark SPY", "Momentum", "Mean-Reversion", "Value portfolio", "Growth portfolio", "All Weather portfolio"];
+    const [strategyToDisplay, setStrategyToDisplay] = useState(strategiesList[0]);
     const handleShowCards = (e) => {
         e.preventDefault();
         setCardListHeight(!cardListHeight);
@@ -18,6 +24,7 @@ export const Strategies = () => {
         const {name} = e.target;
         setBaseCardName(name);
         setCardListHeight(!cardListHeight);
+        setStrategyToDisplay(name);
     };
     const handleStrategyInfoBtn = (e) => {
         e.preventDefault();
@@ -31,6 +38,15 @@ export const Strategies = () => {
         }
     };
     window.addEventListener("scroll", displayStrategyAnime);
+
+
+
+    const dataFromStrategy = (arr) => {
+        setTotalReturn(arr[arr.length -1]);
+        setStDev(std(arr))
+    };
+
+
 
 
 
@@ -69,10 +85,10 @@ export const Strategies = () => {
                             <i className="fas fa-chevron-circle-right" style={{display: `${strategyInfoBtn ? "inline-block" : "none"}`}}/>
                             <i className="fas fa-times-circle" style={{display: `${strategyInfoBtn ? "none" : "inline-block"}`}}/>
                         </li>
-                        <li>Total return:<span>256%</span></li>
-                        <li>Annual average return:<span>12%</span></li>
-                        <li>Biggest dropdown:<span>30%</span></li>
-                        <li>CAGR:<span>23</span></li>
+                        <li>Total return:<span>{totalReturn + "%"}</span></li>
+                        <li>Annual average return:<span>{totalReturn / 10 + "%"}</span></li>
+                        <li>Average standard deviation<span>{stDev}</span></li>
+                        <li>Yearly Sharpe Ratio<span>{}</span></li>
                         <li>CAGR:<span>12</span></li>
                         <li>CAGR:<span>3343</span></li>
                         <li>CAGR:<span>1212</span></li>
@@ -86,7 +102,7 @@ export const Strategies = () => {
 
                 <div className="strategies__chart">
                     <div className="strategies__chart__content">
-                       <StrategiesAlgo/>
+                       <StrategiesAlgo callback={dataFromStrategy} strategyToDisplay={strategyToDisplay}/>
                     </div>
                 </div>
             </section>

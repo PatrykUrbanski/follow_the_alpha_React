@@ -4,7 +4,7 @@ import {SPYBenchmarkStrategy} from "./spyBenchmarkStrategy";
 import {AllWeatherStrategy} from "./allWeatherStrategy";
 import {GrowthStrategy} from "./GrowthStrategy";
 
-export const StrategiesAlgo = () => {
+export const StrategiesAlgo = ({callback, strategyToDisplay}) => {
     const [symbol, setSymbol] = useState("SPY");
     const [SPY, setSPY] = useState(false);
     const [SPYDates, setSPYDates] = useState(false);
@@ -35,10 +35,9 @@ export const StrategiesAlgo = () => {
 
     return (
         <>
-            <SPYBenchmarkStrategy quotes={SPY} dates={SPYDates}/>
-            {/*<AllWeatherStrategy dates={SPYDates}/>*/}
-            {/*<GrowthStrategy dates={SPYDates}/>*/}
-
+            {(strategyToDisplay === "Benchmark SPY") && <SPYBenchmarkStrategy quotes={SPY} dates={SPYDates} callback={callback}/>}}
+            {(strategyToDisplay === "Growth portfolio" && <GrowthStrategy dates={SPYDates} callback={callback}/>)}
+            {(strategyToDisplay === "All Weather portfolio" && <AllWeatherStrategy dates={SPYDates} callback={callback}/>)}
         </>
     )
 }

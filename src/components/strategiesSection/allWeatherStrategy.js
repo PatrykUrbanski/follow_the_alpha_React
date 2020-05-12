@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {ChartDisplay_strategies} from "../chart/ChartDisplay_strategies";
 import {getData} from "../api/api";
 
-export const AllWeatherStrategy = ({dates}) => {
+export const AllWeatherStrategy = ({dates, callback}) => {
 
     const [IVVReturn, setIVVReturn] = useState(false);
     const [VEUReturn, setVEUReturn] = useState(false);
@@ -51,7 +51,6 @@ export const AllWeatherStrategy = ({dates}) => {
 
 
 
-
     let totalReturn = [];
     for (let i = 0; i < IVVUsdReturn.length; i++) {
         totalReturn.push((parseFloat(IVVUsdReturn[i]) * 0.4 + parseFloat(VEUUsdReturn[i]) * 0.3 + parseFloat(BNDUsdReturn[i]) * 0.3))
@@ -59,7 +58,7 @@ export const AllWeatherStrategy = ({dates}) => {
 
 
 
-
+    callback(totalReturn);
 
 
 
