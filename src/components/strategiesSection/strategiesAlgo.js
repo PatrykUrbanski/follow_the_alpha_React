@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {getData, GetSymbols} from "../api/api"
 import {SPYBenchmarkStrategy} from "./spyBenchmarkStrategy";
 import {AllWeatherStrategy} from "./allWeatherStrategy";
+import {GrowthStrategy} from "./GrowthStrategy";
 
 export const StrategiesAlgo = () => {
     const [symbol, setSymbol] = useState("SPY");
@@ -36,6 +37,7 @@ export const StrategiesAlgo = () => {
         <>
             <SPYBenchmarkStrategy quotes={SPY} dates={SPYDates}/>
             {/*<AllWeatherStrategy dates={SPYDates}/>*/}
+            {/*<GrowthStrategy dates={SPYDates}/>*/}
 
         </>
     )
