@@ -5,14 +5,23 @@ var uniqid = require('uniqid');
 
 export const JournalTable = () => {
 
+    const [reload, setReload] = useState(false);
+
     let allTrades = JSON.parse(localStorage.getItem("trades"));
+
+    useEffect(() => {
+        allTrades = JSON.parse(localStorage.getItem("trades"));
+    }, [reload]);
 
     const handleDeleteBtn = (e) => {
         const  key = e.target.getAttribute("data-key");
         allTrades.forEach(trade => {
+            if (trade != null) {
             if (trade.id === key) {
                 delete allTrades[allTrades.indexOf(trade)];
-                window.localStorage.trades = JSON.stringify(allTrades)
+                window.localStorage.trades = JSON.stringify(allTrades);
+                setReload(prevState => !prevState);
+            }
             }
         })
     };

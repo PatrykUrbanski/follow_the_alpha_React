@@ -128,7 +128,7 @@ export const JournalApp = () => {
                 </div>
             </section>
 
-            <JournalTable/>
+            <JournalTable />
             <JournalChart trades={trades}/>
         </>
     )
