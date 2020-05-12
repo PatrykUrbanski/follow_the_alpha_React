@@ -1,12 +1,26 @@
 .strategies {
   margin-top: 200px;
   opacity: 0;
-
-  p {
+  &__page {
     margin-bottom: 50px;
+    position: relative;
+    h2 {
+      font-size: 2.1rem;
+      margin-bottom: 50px;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      line-height: 1.5rem;
+      &.warn {
+        font-size: 1rem;
+        color: #e94a45;
+      }
+    }
+    span {
 
+    }
   }
-
   &__cards {
     display: flex;
     justify-content: center;

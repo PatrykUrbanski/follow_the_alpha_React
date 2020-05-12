@@ -95,6 +95,8 @@ export const JournalApp = () => {
         <>
             <section className="journalApp">
                 <div className="journalApp__content container">
+                    <h2 className={"title"}> Journal App </h2>
+                    <p>Add your trades and track your portfolio</p>
                     <h2 onClick={handleOpenForm}>Add new trade
                         <i className="addBtn fas fa-plus-circle" style={{display: `${!openForm ? "inline-block" : "none"}`}}/>
                         <i className="hideBtn fas fa-eye-slash" style={{display: `${!openForm ? "none" : "inline-block"}`}}/>

@@ -37,12 +37,18 @@ export const Strategies = () => {
     return (
         <>
             <section className={`strategies container ${strategyAnime}`}>
-                <p id="strategiesPage">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur
-                    dicta itaque laboriosam minima sed ut voluptates? Culpa doloribus labore, nobis sequi suscipit vero.
-                    Distinctio nemo porro ratione tenetur vel!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur dicta itaque laboriosam
-                    minima sed ut voluptates? Culpa doloribus labore, nobis sequi suscipit vero. Distinctio nemo porro
-                    ratione tenetur vel!</p>
+                <div className="strategies__page">
+                    <h2>Alpha strategies</h2>
+                    <p>Actual results based on end-of-day prices.</p>
+                    <p>Time period: last 10 year from last trading session.</p>
+                    <p>Slippage, broker commission, expanse ratio etc. are not included. Following data are for illustrative and inspiration purposes only.</p>
+                    <p className={"warn"}>Do not put your money to the market based only on what you see here.</p>
+                    <p className={"warn"}>Do not put money you can't lose on the market.</p>
+                    <p className={"warn"}>Do not spend all of your buying power on one equity. </p>
+                    <p className={"warn"}>Do not trade based on what some guy in the internet said.</p>
+                    <span>...if it wasn't obvious, better click here</span>
+                </div>
+
                 <div className="strategies__cards">
                     <a href="#" className="base card" onClick={handleShowCards}>
                         <span>{baseCardName}</span>

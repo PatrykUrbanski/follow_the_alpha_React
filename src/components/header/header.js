@@ -13,6 +13,10 @@ export const Header = () => {
         setOpenMenu("");
     };
 
+    document.querySelector("body").addEventListener("click", () => {
+        setOpenMenu("");
+    });
+
 
     return (
         <>
