@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {getData} from "../api/api";
 import {JournalTable} from "./journalTable";
 import {JournalChart} from "./journalChart";
-
+var uniqid = require('uniqid');
 export const JournalApp = () => {
     const [trades, setTrades] = useState(false);
 
@@ -74,7 +74,8 @@ export const JournalApp = () => {
         }
 
         const newTrade = {
-            id: allTrades.length + 1,
+            id: uniqid(),
+            index: allTrades.length + 1,
             symbol: symbol,
             longShort: longShort,
             size: size,

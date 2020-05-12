@@ -1,9 +1,23 @@
 import React, {useEffect, useState} from "react";
 import {Line} from "react-chartjs-2";
 import {JournalChart} from "./journalChart";
+var uniqid = require('uniqid');
 
 export const JournalTable = () => {
+
     let allTrades = JSON.parse(localStorage.getItem("trades"));
+
+    const handleDeleteBtn = (e) => {
+        const  key = e.target.getAttribute("data-key");
+        allTrades.forEach(trade => {
+            if (trade.id === key) {
+                delete allTrades[allTrades.indexOf(trade)];
+                window.localStorage.trades = JSON.stringify(allTrades)
+            }
+        })
+    };
+
+
 
     return (
         <>
@@ -13,7 +27,7 @@ export const JournalTable = () => {
                     <table>
                         <thead>
                         <tr className="row">
-                            <th className="col-1">Id</th>
+                            <th className="col-1">Index</th>
                             <th className="col-4">Trade info</th>
                             <th className="col-3">Return</th>
                             <th className="col-2">Duration (days)</th>
@@ -23,13 +37,14 @@ export const JournalTable = () => {
                         </thead>
                         <tbody>
                         {allTrades != null && allTrades.map(trade => { return (
-                            <tr key={`${trade.id}-row`} className="row">
-                                <th className="col-1">{trade.id}</th>
+                            trade != null &&
+                            <tr key={uniqid()} className="row">
+                                <th className="col-1">{trade.index}</th>
                                 <th className="col-4">{trade.symbol} {trade.longShort}</th>
                                 <th className="col-3">{trade.resultValue}</th>
                                 <th className="col-2">{trade.duration}</th>
                                 <th className="col-1">{trade.size}</th>
-                                <th className="col-1"><i name={trade.id} className="fas fa-trash"/></th>
+                                <th className="col-1"><i data-key={trade.id} className="fas fa-trash" onClick={handleDeleteBtn}/></th>
                             </tr>
                         )
                         })}
@@ -46,4 +61,4 @@ export const JournalTable = () => {
 
         </>
     )
-}
+};

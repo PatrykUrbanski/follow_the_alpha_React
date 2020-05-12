@@ -31,8 +31,10 @@ export const JournalChart = ({trades}) => {
         let tempDatesArr = [];
         if (allTrades != null) {
             allTrades.forEach(function (trade) {
-            tempDatesArr.push(trade.getOut);
-            tempReturnArr.push(parseFloat(trade.resultValue));
+                if (trade != null) {
+                    tempDatesArr.push(trade.getOut);
+                    tempReturnArr.push(parseFloat(trade.resultValue));
+                }
         });
     }
         setReturnArray(tempReturnArr);
