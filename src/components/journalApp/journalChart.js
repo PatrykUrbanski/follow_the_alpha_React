@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {ChartDisplay_journal} from "../chart/ChartDisplay_journal";
 
-export const JournalChart = ({trades}) => {
+export const JournalChart = ({reload, addTrades}) => {
     const [returnArray, setReturnArray] = useState([]);
     const [datesArray, setDatesArray] = useState([]);
 
@@ -39,7 +39,7 @@ export const JournalChart = ({trades}) => {
     }
         setReturnArray(tempReturnArr);
         setDatesArray(tempDatesArr);
-    }, [trades]);
+    }, [reload, addTrades]);
 
 
 

@@ -3,7 +3,7 @@ import {Line} from "react-chartjs-2";
 import {JournalChart} from "./journalChart";
 var uniqid = require('uniqid');
 
-export const JournalTable = () => {
+export const JournalTable = ({addTrades}) => {
 
     const [reload, setReload] = useState(false);
 
@@ -67,6 +67,8 @@ export const JournalTable = () => {
                     </table>
                 </div>
             </section>
+
+            <JournalChart reload={reload} addTrades={addTrades}/>
 
         </>
     )

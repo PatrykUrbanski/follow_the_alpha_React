@@ -86,12 +86,7 @@ export const JournalApp = () => {
 
         getReturnInUsd((Date.parse(getIn) / 1000), (Date.parse(getOut) / 1000), symbol, newTrade);
 
-
-
-
-
-
-
+        document.querySelector("form").reset()
     };
 
 
@@ -128,8 +123,8 @@ export const JournalApp = () => {
                 </div>
             </section>
 
-            <JournalTable />
-            <JournalChart trades={trades}/>
+            <JournalTable addTrades={trades}/>
+
         </>
     )
 };
