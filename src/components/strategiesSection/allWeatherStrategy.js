@@ -19,7 +19,7 @@ export const AllWeatherStrategy = ({dates, callback}) => {
         return Math.floor(Date.now() / 1000 - (24 * 3600));
     };
 
-
+    const method = "all weather porftolio homie";
 
     useEffect(() => {
         allWeatherStrategyTickers.forEach((ticker, index) => {
@@ -58,7 +58,7 @@ export const AllWeatherStrategy = ({dates, callback}) => {
 
 
 
-    callback(totalReturn);
+    callback(totalReturn, method);
 
 
 

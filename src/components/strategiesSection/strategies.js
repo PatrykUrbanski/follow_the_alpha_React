@@ -7,6 +7,7 @@ export const Strategies = () => {
 
     const [totalReturn, setTotalReturn] = useState(false);
     const [stDev, setStDev] = useState(false);
+    const [method, setMethod] = useState("");
 
     const [cardListHeight, setCardListHeight] = useState(false);
     const [baseCardName, setBaseCardName] = useState("Benchmark SPY");
@@ -41,9 +42,10 @@ export const Strategies = () => {
 
 
 
-    const dataFromStrategy = (arr) => {
+    const dataFromStrategy = (arr, method) => {
         setTotalReturn(arr[arr.length -1]);
-        setStDev(std(arr))
+        setStDev(std(arr));
+        setMethod(method)
     };
 
 
@@ -94,9 +96,7 @@ export const Strategies = () => {
                         <li>CAGR:<span>1212</span></li>
                     </ul>
                     <div className="methodologyBox" style={{height: `${strategyInfoBtn ? "0" : "100%"}`}}>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, ipsam nulla obcaecati odio
-                            tempore vero voluptatum. At dicta enim impedit natus neque perspiciatis sapiente totam.
-                            Magni modi neque soluta voluptatem.</p>
+                        <p>{method}</p>
                     </div>
                 </div>
 

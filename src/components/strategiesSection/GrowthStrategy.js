@@ -19,7 +19,7 @@ export const GrowthStrategy = ({dates, callback}) => {
         return Math.floor(Date.now() / 1000 - (24 * 3600));
     };
 
-
+    const method = "growth grwotjrdasdasdasd";
 
     useEffect(() => {
         growthStrategyTickers.forEach((ticker, index) => {
@@ -58,7 +58,7 @@ export const GrowthStrategy = ({dates, callback}) => {
     }
 
 
-    callback(totalReturn);
+    callback(totalReturn, method);
 
 
 

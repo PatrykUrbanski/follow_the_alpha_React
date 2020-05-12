@@ -5,6 +5,8 @@ export const SPYBenchmarkStrategy = ({quotes, dates, callback}) => {
     const [prices, setPrices] = useState(false);
     const [dateElems, setDateElems] = useState(false);
 
+    const method = "Simple Buy and Hold SP 500 strategy. Based on IVV etf.";
+
     useEffect(() => {
         let usdReturn = [];
         let dateArray = [];
@@ -19,7 +21,8 @@ export const SPYBenchmarkStrategy = ({quotes, dates, callback}) => {
 
     if (!prices || !dateElems) return null;
 
-    callback(prices);
+    callback(prices, method);
+
 
     return (
         <>
