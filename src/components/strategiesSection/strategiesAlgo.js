@@ -35,9 +35,9 @@ export const StrategiesAlgo = ({callback, strategyToDisplay}) => {
 
     return (
         <>
-            {(strategyToDisplay === "Benchmark SPY") && <SPYBenchmarkStrategy quotes={SPY} dates={SPYDates} callback={callback}/>}}
-            {(strategyToDisplay === "Growth portfolio" && <GrowthStrategy dates={SPYDates} callback={callback}/>)}
-            {(strategyToDisplay === "All Weather portfolio" && <AllWeatherStrategy dates={SPYDates} callback={callback}/>)}
+            {(strategyToDisplay === "Benchmark SPY") && <SPYBenchmarkStrategy quotes={SPY} dates={SPYDates} callback={callback}/>}
+            {(strategyToDisplay === "Growth portfolio") && <GrowthStrategy dates={SPYDates} callback={callback}/>}
+            {(strategyToDisplay === "All Weather portfolio") && <AllWeatherStrategy dates={SPYDates} callback={callback}/>}
         </>
     )
 }

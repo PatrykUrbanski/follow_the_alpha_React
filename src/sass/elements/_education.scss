@@ -1,0 +1,15 @@
+.educationSection {
+  display: flex;
+  &__content {
+    margin: 80px;
+    justify-content: center;
+    .swipeCard {
+      height: 200px;
+      background-color: #FFFFFF;
+      img {
+        height: 50px;
+        width: 50px;
+      }
+    }
+  }
+}
