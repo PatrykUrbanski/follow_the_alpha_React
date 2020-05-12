@@ -4,11 +4,24 @@
     margin: 80px;
     justify-content: center;
     .swipeCard {
-      height: 200px;
-      background-color: #FFFFFF;
+      background-color: transparent;
+      width: 150px;
+      display: flex;
+      justify-content: center;
       img {
-        height: 50px;
-        width: 50px;
+        height: 200px;
+        width: 150px;
+        transition: .3s;
+        &:hover {
+          transform: rotate3d(0, 1, 0, 180deg);
+          &::after {
+            content: "";
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            position: absolute;
+          }
+        }
       }
     }
   }

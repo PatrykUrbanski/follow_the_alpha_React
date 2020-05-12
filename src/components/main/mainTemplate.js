@@ -12,7 +12,7 @@ export const MainTemplate = () => {
             <Banner/>
             <Strategies/>
             <JournalApp/>
-                <CoverflowEffect/>
+            <CoverflowEffect/>
 
         </>
     )

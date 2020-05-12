@@ -44,9 +44,9 @@ export const Strategies = () => {
 
 
     const dataFromStrategy = (arr, method) => {
-        setTotalReturn(arr[arr.length -1]);
-        setStDev(std(arr));
-        setMethod(method)
+        setTotalReturn(parseFloat(arr[arr.length -1]).toFixed(2));
+        setStDev(parseFloat(std(arr)).toFixed(2));
+        setMethod(method);
     };
 
 
@@ -95,7 +95,7 @@ export const Strategies = () => {
                                 <i className="fas fa-times-circle" style={{display: `${strategyInfoBtn ? "none" : "inline-block"}`}}/>
                             </li>
                             <li>Total return:<span>{totalReturn + "%"}</span></li>
-                            <li>Annual average return:<span>{totalReturn / 10 + "%"}</span></li>
+                            <li>Annual average return:<span>{(totalReturn / 10).toFixed(2) + "%"}</span></li>
                             <li>Average standard deviation<span>{stDev}</span></li>
                             <li>Yearly Sharpe Ratio<span>{}</span></li>
                             <li>CAGR:<span>12</span></li>

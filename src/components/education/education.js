@@ -25,11 +25,11 @@ const MutipleSlidesPerView = () => {
             <div className={"educationSection__content container"}>
                 <Swiper {...params}>
                     <div className={"swipeCard"}><img src={"../images/screen1.png"}/></div>
-                    <div className={"swipeCard"}><img src={"../images/screen1.png"}/></div>
-                    <div className={"swipeCard"}><img src={"../images/screen1.png"}/></div>
-                    <div className={"swipeCard"}><img src={"../images/screen1.png"}/></div>
-                    <div className={"swipeCard"}><img src={"../images/screen1.png"}/></div>
-                    <div className={"swipeCard"}><img src={"../images/screen1.png"}/></div>
+                    <div className={"swipeCard"}><img src={"../images/manWhoSoldved.jpg"}/></div>
+                    <div className={"swipeCard"}><img src={"../images/principles.jpg"}/></div>
+                    <div className={"swipeCard"}><img src={"../images/reminLafevre.jpeg"}/></div>
+                    <div className={"swipeCard"}><img src={"../images/deliveringAlpha.jpg"}/></div>
+                    <div className={"swipeCard"}><img src={"../images/tradingZone.jpg"}/></div>
                     <div className={"swipeCard"}><img src={"../images/screen1.png"}/></div>
                     <div className={"swipeCard"}><img src={"../images/screen1.png"}/></div>
                     <div className={"swipeCard"}><img src={"../images/screen1.png"}/></div>
