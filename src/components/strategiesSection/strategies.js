@@ -56,7 +56,7 @@ export const Strategies = () => {
 
     return (
         <>
-            <section className={`strategies container ${strategyAnime}`}>
+            <section id={"strategiesSection"} className={`strategies container ${strategyAnime}`}>
                 <div className="strategies__page">
                     <h2>Alpha strategies</h2>
                     <p>Actual results based on end-of-day prices.</p>

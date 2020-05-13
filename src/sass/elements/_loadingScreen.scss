@@ -12,6 +12,8 @@
   text-transform: uppercase;
   font-weight: 900;
   letter-spacing: 0.2em;
+  animation: fadeOut 2.3s ease-in-out;
+
 
   &::before, &::after {
     content: "";
@@ -21,6 +23,7 @@
     background: rgba(233, 74, 69, .5);
     position: absolute;
     animation: load .7s infinite alternate ease-in-out;
+    animation-fill-mode: both;
   }
 
   &::before {
@@ -30,6 +33,16 @@
   &::after {
     bottom: 0;
   }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+
 }
 
 @keyframes load {

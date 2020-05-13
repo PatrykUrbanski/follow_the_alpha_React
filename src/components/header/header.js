@@ -29,7 +29,7 @@ export const Header = () => {
                         </a>
                         <div className={`header__nav__list ${openMenu}`}>
                             <i id="closeBtn" onClick={handleCloseNav} className={`fas fa-times visible`}/>
-                            <a href={"#"} onClick={handleCloseNav}><Link to={"/"}>Strategies</Link></a>
+                            <a href={"#strategiesSection"} onClick={handleCloseNav}><Link to={"/#strategiesSection"}>Strategies</Link></a>
                             <a href={"#"} onClick={handleCloseNav}><Link to={"/journalApp"}>Journal App</Link></a>
                             <a href="#" onClick={handleCloseNav}><Link to={"/authorPage"}>Author & Project Details</Link></a>
                         </div>
