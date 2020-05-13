@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from "react";
 import {getData} from "../api/api";
 import {JournalTable} from "./journalTable";
-import {JournalChart} from "./journalChart";
 var uniqid = require('uniqid');
+
 export const JournalApp = () => {
     const [trades, setTrades] = useState(false);
-
 
     const [openForm, setOpenForm] = useState(false);
     const [errorMsg, setErrorMsg] = useState(false);
@@ -16,6 +15,7 @@ export const JournalApp = () => {
     const [getIn, setGetIn] = useState("");
     const [getOut, setGetOut] = useState("");
     const [tradeReturn, setTradeReturn] = useState("0");
+
 
     const reset = () => {
         setSymbol("");
@@ -63,6 +63,9 @@ export const JournalApp = () => {
                         return setTradeReturn(tradeReturnValue)
                     }
                 }
+                if (data.s === "no_data") {
+                    setErrorMsg(true)
+                }
             });
         });
     };
@@ -80,6 +83,7 @@ export const JournalApp = () => {
         }else {
             setErrorMsg(false)
         }
+
 
         let allTrades = JSON.parse(localStorage.getItem("trades"));
         if (allTrades === null) {
@@ -119,7 +123,7 @@ export const JournalApp = () => {
                     </h2>
                     <form style={{height: `${!openForm ? "0" : "400px"}`}} onSubmit={e => handleSendForm(e)}>
                         <span className="errorMSG" style={{height: `${!errorMsg ? "0px" : "25px"}`}}>You need to properly fill all boxes.</span>
-                        <label className="symbol">Currently we support all US stock and ETFs
+                        <label className="symbol">Currently we support all S&P 500 companies
                             <input className="formElem" type="text" placeholder="Stock symbol" value={symbol} name={"symbol"} onChange={e => setSymbol(e.target.value)}/>
                         </label>
                         <select className="longShort formElem" placeholder={"Long/Short"} value={longShort} onChange={e => setLongShort(e.target.value)}>

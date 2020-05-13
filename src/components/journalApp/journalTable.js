@@ -8,6 +8,13 @@ export const JournalTable = ({addTrades}) => {
     const [reload, setReload] = useState(false);
     const [sum, setSum] = useState(0);
 
+
+
+
+
+
+
+
     let allTrades = JSON.parse(localStorage.getItem("trades"));
 
     useEffect(() => {
