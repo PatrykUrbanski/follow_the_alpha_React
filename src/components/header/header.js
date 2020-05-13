@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 export const Header = () => {
     const [openMenu, setOpenMenu] = useState("");
@@ -29,7 +29,7 @@ export const Header = () => {
                         </a>
                         <div className={`header__nav__list ${openMenu}`}>
                             <i id="closeBtn" onClick={handleCloseNav} className={`fas fa-times visible`}/>
-                            <Link onClick={handleCloseNav} to={"/"}>Strategies</Link>
+                            <a href={"#"} onClick={handleCloseNav}><Link to={"/"}>Strategies</Link></a>
                             <a href={"#"} onClick={handleCloseNav}><Link to={"/journalApp"}>Journal App</Link></a>
                             <a href="#" onClick={handleCloseNav}><Link to={"/authorPage"}>Author & Project Details</Link></a>
                         </div>

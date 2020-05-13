@@ -4,15 +4,17 @@ import "./sass/main.scss";
 import {MainTemplate} from "./components/main/mainTemplate";
 import {ParallaxProvider} from "react-scroll-parallax/cjs";
 import {Header} from "./components/header/header";
+import {BrowserRouter} from "react-router-dom";
 
 
 
 const App = () => {
     return (
+        <BrowserRouter>
         <ParallaxProvider>
             <MainTemplate/>
         </ParallaxProvider>
-
+        </BrowserRouter>
         )
 };
 

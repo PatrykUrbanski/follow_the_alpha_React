@@ -4,8 +4,10 @@ import {EducationSwiper} from "../education/education";
 export const AuthorPage = () => {
     return (
         <>
-            <h1>author page</h1>
-            <EducationSwiper/>
+            <div className={"pageToTransit"}>
+                <h1>author page</h1>
+                <EducationSwiper/>
+            </div>
         </>
     )
 }

@@ -93,40 +93,41 @@ export const JournalApp = () => {
 
     return (
         <>
-            <section className="journalApp">
-                <div className="journalApp__content container">
-                    <h2 className={"title"}> Journal App </h2>
-                    <p>Add your trades and track your portfolio</p>
-                    <h2 onClick={handleOpenForm}>Add new trade
-                        <i className="addBtn fas fa-plus-circle" style={{display: `${!openForm ? "inline-block" : "none"}`}}/>
-                        <i className="hideBtn fas fa-eye-slash" style={{display: `${!openForm ? "none" : "inline-block"}`}}/>
-                    </h2>
-                    <form style={{height: `${!openForm ? "0" : "400px"}`}} onSubmit={e => handleSendForm(e)}>
-                        <span className="errorMSG" style={{height: `${!errorMsg ? "0px" : "25px"}`}}>You need to properly fill all boxes.</span>
-                        <label className="symbol">Currently we support all US stock and ETFs
-                            <input className="formElem" type="text" placeholder="Stock symbol" name={"symbol"} onChange={e => setSymbol(e.target.value)}/>
-                        </label>
-                        <select className="longShort formElem" placeholder={"Long/Short"} onChange={e => setLongShort(e.target.value)}>
-                            <option value="long">LONG</option>
-                            <option value="short">SHORT</option>
-                        </select>
-                        <label className="size">Size
-                            <input className="formElem" type="text" name={"size"} onChange={e => setSize(e.target.value)}/>
-                        </label>
+            <div className={"pageToTransit"}>
+                <section className="journalApp">
+                    <div className="journalApp__content container">
+                        <h2 className={"title"}> Journal App </h2>
+                        <p>Add your trades and track your portfolio</p>
+                        <h2 onClick={handleOpenForm}>Add new trade
+                            <i className="addBtn fas fa-plus-circle" style={{display: `${!openForm ? "inline-block" : "none"}`}}/>
+                            <i className="hideBtn fas fa-eye-slash" style={{display: `${!openForm ? "none" : "inline-block"}`}}/>
+                        </h2>
+                        <form style={{height: `${!openForm ? "0" : "400px"}`}} onSubmit={e => handleSendForm(e)}>
+                            <span className="errorMSG" style={{height: `${!errorMsg ? "0px" : "25px"}`}}>You need to properly fill all boxes.</span>
+                            <label className="symbol">Currently we support all US stock and ETFs
+                                <input className="formElem" type="text" placeholder="Stock symbol" name={"symbol"} onChange={e => setSymbol(e.target.value)}/>
+                            </label>
+                            <select className="longShort formElem" placeholder={"Long/Short"} onChange={e => setLongShort(e.target.value)}>
+                                <option value="long">LONG</option>
+                                <option value="short">SHORT</option>
+                            </select>
+                            <label className="size">Size
+                                <input className="formElem" type="text" name={"size"} onChange={e => setSize(e.target.value)}/>
+                            </label>
 
-                        <label className="getIn">Get in:
-                            <input className="formElem" type="date" name={"getIn"} onChange={e => setGetIn(e.target.value)}/>
-                        </label>
-                        <label className="getOut">Get out:
-                            <input className="formElem" type="date" name={"getOut"} onChange={e => setGetOut(e.target.value)}/>
-                        </label>
-                        <a href="#" type={"submit"} className="doneBtn" onClick={e => handleSendForm(e)}>Done</a>
-                    </form>
-                </div>
-            </section>
+                            <label className="getIn">Get in:
+                                <input className="formElem" type="date" name={"getIn"} onChange={e => setGetIn(e.target.value)}/>
+                            </label>
+                            <label className="getOut">Get out:
+                                <input className="formElem" type="date" name={"getOut"} onChange={e => setGetOut(e.target.value)}/>
+                            </label>
+                            <a href="#" type={"submit"} className="doneBtn" onClick={e => handleSendForm(e)}>Done</a>
+                        </form>
+                    </div>
+                </section>
 
-            <JournalTable addTrades={trades}/>
-
+                <JournalTable addTrades={trades}/>
+            </div>
         </>
     )
 };

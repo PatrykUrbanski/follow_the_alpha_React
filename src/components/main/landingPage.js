@@ -6,9 +6,11 @@ import {Strategies} from "../strategiesSection/strategies";
 export const LandingPage = () => {
     return (
         <>
-            <Banner/>
-            <ParallaxBackground/>
-            <Strategies/>
+            <div className={"pageToTransit"}>
+                <Banner/>
+                <ParallaxBackground/>
+                <Strategies/>
+            </div>
         </>
     )
 };

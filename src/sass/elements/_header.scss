@@ -24,7 +24,7 @@
     a {
       text-decoration: none;
       color: $main-text;
-      opacity: .6;
+      opacity: .7;
       transition: .3s;
       &:hover {
         opacity: 1;
@@ -63,14 +63,17 @@
         right: 0;
         background: #f3f3f3;
         overflow-x: hidden;
-        transition: 1s;
+        transition: .7s;
         padding-top: 60px;
         color: #e94a45;
         a {
           display: block;
-          margin: 50px;
+          margin-left: 25px;
+          margin-bottom: 50px;
+          margin-top: 50px;
           font-size: 1.8rem;
           color: #e94a45;
+          opacity: 1;
         }
         i {
           font-size: 2rem;
