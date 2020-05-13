@@ -1,4 +1,5 @@
 import React from "react";
+import {ParallaxBackground} from "./paralaxSection";
 
 export const Banner = () => {
     return (

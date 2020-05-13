@@ -1,21 +1,25 @@
 import React from "react";
 import {Header} from "../header/header";
-import {Banner} from "../banner/banner";
-import {Strategies} from "../strategiesSection/strategies";
 import {JournalApp} from "../journalApp/journalApp";
-import {EducationSwiper} from "../education/education";
-import {Parallaxdiv} from "../banner/paralax";
+import {HashRouter, Route} from "react-router-dom";
+import {LandingPage} from "./landingPage";
+import {AuthorPage} from "../authorPage/authorPage";
 
 export const MainTemplate = () => {
     return (
         <>
-            <Header/>
-            <Banner/>
-            <Parallaxdiv/>
-            <Strategies/>
-            <JournalApp/>
-            <EducationSwiper/>
+            <HashRouter>
+                <Header/>
+                <Route exact path={"/"} component={LandingPage}/>
+                <Route path={"/journalApp"} component={JournalApp}/>
+                <Route path={"/authorPage"} component={AuthorPage}/>
+            </HashRouter>
 
+            {/*<Banner/>*/}
+            {/*<ParallaxBackground/>*/}
+            {/*<Strategies/>*/}
+            {/*<JournalApp/>*/}
+            {/*<EducationSwiper/>*/}
         </>
     )
-}
+};

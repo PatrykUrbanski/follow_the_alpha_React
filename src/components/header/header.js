@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {Link} from "react-router-dom";
 
 export const Header = () => {
     const [openMenu, setOpenMenu] = useState("");
@@ -8,7 +9,7 @@ export const Header = () => {
         setOpenMenu("sidebarWidth")
     };
 
-    const handleCloseNAv = (e) => {
+    const handleCloseNav = (e) => {
         e.preventDefault();
         setOpenMenu("");
     };
@@ -22,16 +23,15 @@ export const Header = () => {
         <>
             <header className="header">
                 <nav className="header__nav container">
-                    <img className="logo" src="../images/logo1.png" alt="logo" />
+                    <Link to={"/"}><img className="logo" src="../images/logo1.png" alt="logo" /></Link>
                         <a href="#" onClick={handleOpenNav} className={`menu-btn open`}>
-                            <i className="fas fa-braille"></i>
+                            <i className="fas fa-braille"/>
                         </a>
                         <div className={`header__nav__list ${openMenu}`}>
-                            <i id="closeBtn" onClick={handleCloseNAv} className={`fas fa-times visible`}></i>
-                            <a href="#" onClick={handleCloseNAv}>Strategies</a>
-                            <a href="#" onClick={handleCloseNAv}>Journal App</a>
-                            <a href="#" onClick={handleCloseNAv}>Developer's stuff</a>
-                            <a href="#" onClick={handleCloseNAv}>Author</a>
+                            <i id="closeBtn" onClick={handleCloseNav} className={`fas fa-times visible`}/>
+                            <Link onClick={handleCloseNav} to={"/"}>Strategies</Link>
+                            <a href={"#"} onClick={handleCloseNav}><Link to={"/journalApp"}>Journal App</Link></a>
+                            <a href="#" onClick={handleCloseNav}><Link to={"/authorPage"}>Author & Project Details</Link></a>
                         </div>
                 </nav>
             </header>

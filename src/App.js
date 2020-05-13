@@ -3,13 +3,13 @@ import ReactDOM from "react-dom";
 import "./sass/main.scss";
 import {MainTemplate} from "./components/main/mainTemplate";
 import {ParallaxProvider} from "react-scroll-parallax/cjs";
-import {Parallaxdiv} from "./components/banner/paralax";
+import {Header} from "./components/header/header";
+
 
 
 const App = () => {
     return (
         <ParallaxProvider>
-            {/*<Parallaxdiv/>*/}
             <MainTemplate/>
         </ParallaxProvider>
 
