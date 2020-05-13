@@ -6,11 +6,17 @@ var uniqid = require('uniqid');
 export const JournalTable = ({addTrades}) => {
 
     const [reload, setReload] = useState(false);
+    const [sum, setSum] = useState(0);
 
     let allTrades = JSON.parse(localStorage.getItem("trades"));
 
     useEffect(() => {
         allTrades = JSON.parse(localStorage.getItem("trades"));
+        let tempSum = 0;
+        allTrades.forEach(trade => {
+            if (trade != null) tempSum += parseFloat(trade.resultValue);
+        });
+        setSum(tempSum)
     }, [reload]);
 
     const handleDeleteBtn = (e) => {
@@ -30,6 +36,8 @@ export const JournalTable = ({addTrades}) => {
 
     return (
         <>
+
+
             <section className="tradeTable">
                 <div className="tradeTable__content container">
                     <h2>Recent Trades</h2>
@@ -48,12 +56,12 @@ export const JournalTable = ({addTrades}) => {
                         {allTrades != null && allTrades.map(trade => { return (
                             trade != null &&
                             <tr key={uniqid()} className="row">
-                                <th className="col-1">{trade.index}</th>
-                                <th className="col-4">{trade.symbol} {trade.longShort}</th>
-                                <th className="col-3">{trade.resultValue}</th>
-                                <th className="col-2">{trade.duration}</th>
-                                <th className="col-1">{trade.size}</th>
-                                <th className="col-1"><i data-key={trade.id} className="fas fa-trash" onClick={handleDeleteBtn}/></th>
+                                <td className="col-1">{trade.index}</td>
+                                <td className="col-4">{trade.symbol} {trade.longShort}</td>
+                                <td className="col-3">{trade.resultValue}</td>
+                                <td className="col-2">{trade.duration}</td>
+                                <td className="col-1">{trade.size}</td>
+                                <td className="col-1"><i data-key={trade.id} className="fas fa-trash" onClick={handleDeleteBtn}/></td>
                             </tr>
                         )
                         })}
@@ -61,7 +69,7 @@ export const JournalTable = ({addTrades}) => {
                         </tbody>
                         <tfoot>
                         <tr className="row">
-                            <td className="col-12">Cumulative return <span id="cumReturn"/></td>
+                            <td className="col-12">Cumulative return<span id="cumReturn">{`${sum.toFixed(2)} $`}</span></td>
                         </tr>
                         </tfoot>
                     </table>

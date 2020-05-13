@@ -1,16 +1,31 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Header} from "../header/header";
 import {JournalApp} from "../journalApp/journalApp";
 import {LandingPage} from "./landingPage";
 import {AuthorPage} from "../authorPage/authorPage";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 import {Route, Switch} from "react-router-dom";
+import {LoadingScreen} from "../loadingScreen/loadingScreen";
 
 export const MainTemplate = () => {
+    const [loading, setLoading] = useState(true);
+
+
+    useEffect(() => {
+        const timeOut = setTimeout(() => {
+            setLoading(false)
+        }, 2300)
+    }, []);
+
+
+
+
     return (
         <>
-            <Header/>
-            <Route render={({location}) => (
+            {loading ? <LoadingScreen/> : (
+                <>
+                <Header/>
+                <Route render={({location}) => (
                 <TransitionGroup>
                     <CSSTransition
                         key={location.key}
@@ -24,6 +39,8 @@ export const MainTemplate = () => {
                     </CSSTransition>
                 </TransitionGroup>
             )} />
-        </>
+            </>
+            )}
+            </>
     )
 };

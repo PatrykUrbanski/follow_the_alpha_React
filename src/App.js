@@ -5,6 +5,7 @@ import {MainTemplate} from "./components/main/mainTemplate";
 import {ParallaxProvider} from "react-scroll-parallax/cjs";
 import {Header} from "./components/header/header";
 import {BrowserRouter} from "react-router-dom";
+import {LoadingScreen} from "./components/loadingScreen/loadingScreen";
 
 
 

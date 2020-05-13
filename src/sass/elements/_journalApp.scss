@@ -7,6 +7,7 @@
       margin-bottom: 20px;
       letter-spacing: 15px;
       text-transform: uppercase;
+      text-align: center;
     }
     h2 {
       font-size: 1.8rem;
@@ -14,6 +15,9 @@
       i {
         margin-left: 10px;
       }
+    }
+    p {
+      text-align: center;
     }
     form {
       display: flex;
@@ -91,6 +95,7 @@
         tr{
           td{
             text-align: left;
+            font-size: 1rem;
           }
         }
       }
@@ -108,6 +113,10 @@
   margin-top: 50px;
   &__content {
     width: 90%;
+    @include desktop {
+      width: 70%;
+      margin: 0 200px;
+    }
   }
 }
 
