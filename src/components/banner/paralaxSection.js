@@ -11,7 +11,7 @@ import React, {useState} from 'react';
 export const ParallaxBackground = () => (
     <>
         <div className={"parallax"}>
-            <Parallax y={[-50, 50]} tagOuter="figure">
+            <Parallax y={[-50, 0]} tagOuter="figure">
                 <div className={"parallax__bg"} >
                     <img src={"./images/bg3.jpg"}/>
                 </div>
