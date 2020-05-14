@@ -33,14 +33,6 @@ export const Strategies = () => {
         setStrategyInfoBtn(!strategyInfoBtn);
     };
 
-    const displayStrategyAnime = () => {
-        if (window.pageYOffset > 400) {
-            setStrategyAnime("displayAnime");
-            window.removeEventListener("scroll", displayStrategyAnime)
-        }
-    };
-    window.addEventListener("scroll", displayStrategyAnime);
-
 
 
     const dataFromStrategy = (arr, method) => {
@@ -66,7 +58,6 @@ export const Strategies = () => {
                     <p className={"warn"}>Do not put money you can't lose on the market.</p>
                     <p className={"warn"}>Do not spend all of your buying power on one equity. </p>
                     <p className={"warn"}>Do not trade based on what some guy in the internet said.</p>
-                    <span>...if it wasn't obvious, better click here</span>
                 </div>
 
                 <div className="strategies__cards">

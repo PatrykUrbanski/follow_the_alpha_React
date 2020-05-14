@@ -1,6 +1,6 @@
 .strategies {
   margin-top: 200px;
-  opacity: 0;
+  opacity: 1;
   &__page {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -111,27 +111,3 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-.displayAnime {
-  animation: displayAnime 2s ease-in-out;
-  animation-fill-mode: both;
-}
-
-//@keyframes displayAnime {
-//  0% {
-//    opacity: 0;
-//  }
-//
-//  100% {
-//    opacity: 1;
-//  }
-//
-//}

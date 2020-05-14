@@ -11,14 +11,14 @@ export const AuthorPage = () => {
                         <h2>Patryk Urbański</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, hic sunt! Aut esse et, fugiat illo laborum nemo qui quis quisquam quo voluptatibus. Alias dolore nulla quo quod, reiciendis veritatis?</p>
                         <div className={"authorPage__info__box__contact"}>
-                            <a href={"#"}><i className="fab fa-github"/></a>
-                            <a href={"#"}><i className="fab fa-linkedin-in"/></a>
-                            <a href={"#"}><i className="fab fa-facebook-f"/></a>
+                            <a target={"_blank"} href={"https://github.com/PatrykUrbanski"}><i className="fab fa-github"/></a>
+                            <a target={"_blank"} href={"https://www.linkedin.com/in/patryk-urbanski/"}><i className="fab fa-linkedin-in"/></a>
+                            <a target={"_blank"} href={"https://www.facebook.com/patryk.urbansky/"}><i className="fab fa-facebook-f"/></a>
                         </div>
                     </div>
                 </div>
 
-                <div className={"ChartAnimation"} style={{backgroundImage: "url(./images/bgChart.png)"}}></div>
+                <div className={"ChartAnimation"} style={{backgroundImage: "url(./images/bgChart.png)"}}/>
 
 
                 <div className={"authorPage__tech"}>
