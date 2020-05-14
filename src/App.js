@@ -11,11 +11,11 @@ import {LoadingScreen} from "./components/loadingScreen/loadingScreen";
 
 const App = () => {
     return (
-        <HashRouter>
+        <BrowserRouter>
         <ParallaxProvider>
             <MainTemplate/>
         </ParallaxProvider>
-        </HashRouter>
+        </BrowserRouter>
         )
 };
 
