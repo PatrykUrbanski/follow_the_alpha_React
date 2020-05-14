@@ -1,11 +1,12 @@
 .authorPage {
-  @include desktop {
+  @include tablet {
     display: flex;
     justify-content: space-between;
   }
   &__info {
     margin-bottom: 50px;
-    @include desktop {
+    z-index: 2;
+    @include tablet {
       width: 50%;
     }
     h1 {
@@ -33,11 +34,14 @@
           top: 55px;
           left: 17px;
           z-index: 0;
-
         }
       }
       p {
         line-height: 1.3rem;
+        @include tablet {
+          font-size: 1.2rem;
+          line-height: 1.5rem;
+        }
       }
       &__contact {
         margin-top: 30px;
@@ -56,6 +60,7 @@
   }
   &__tech {
     font-size: 1.2rem;
+    z-index: 2;
     h1 {
       font-size: 2.2rem;
       text-transform: uppercase;
@@ -117,22 +122,24 @@
           margin: 10px 0;
         }
       }
-      h4 {
-        font-size: 1.5rem;
-        margin: 15px 0;
-        font-weight: 600;
-        &::after {
-          content: "";
-          width: 90%;
-          height: 1px;
-          background: linear-gradient(90deg, $main-text, $main-bg);
-          position: absolute;
-          bottom: 312px;
-          left: 14px;
-          z-index: 0;
-        }
-      }
       .projectDetails {
+        position: relative;
+        h4 {
+          font-size: 1.5rem;
+          margin: 15px 0;
+          font-weight: 600;
+          &::after {
+            content: "";
+            width: 90%;
+            height: 1px;
+            background: linear-gradient(90deg, $main-text, $main-bg);
+            position: absolute;
+            top: 33px;
+            left: 0;
+            z-index: 0;
+          }
+        }
+        &__list {
         margin-bottom: 40px;
         li {
           margin: 10px 0;
@@ -146,6 +153,7 @@
               &:last-child {
                 margin-left: 260px;
               }
+              }
             }
           }
         }
@@ -155,19 +163,31 @@
 }
 
 .ChartAnimation {
-  width: 250px;
-  height: 400px;
-  background-size: auto;
-  background-repeat: no-repeat;
-  animation: moveBg 20s infinite;
+  display: none;
+  @include tablet {
+    display: block;
+    width: 60%;
+    height: 100%;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    animation: moveBg 120s infinite linear;
+    animation-fill-mode: both;
+    opacity: .4;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 0;
+  }
+
 
 }
 
 @keyframes moveBg {
   0% {
-    background-position: 0;
+    background-position: left;
   }
   100% {
-    background-position: -700px;
+    background-position: right;
   }
 }

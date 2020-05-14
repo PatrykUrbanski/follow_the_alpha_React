@@ -18,9 +18,7 @@ export const AuthorPage = () => {
                     </div>
                 </div>
 
-                <div className={"ChartAnimation"} style={{backgroundImage: "url(./images/bg3.jpg)"}}>
-
-                </div>
+                <div className={"ChartAnimation"} style={{backgroundImage: "url(./images/bgChart.png)"}}></div>
 
 
                 <div className={"authorPage__tech"}>
@@ -44,22 +42,24 @@ export const AuthorPage = () => {
                             <li>Adobe XD</li>
                         </ul>
 
-                        <h4>Project details</h4>
-                        <ul className={"projectDetails"}>
-                            <li>Real-Time stock data: finnhub.io</li>
-                            <li>Charts: react-chartjs-2</li>
-                            <li>Parallax background: React Scroll Parallax</li>
-                            <li>
-                                <ul>
-                                    <span>Features to be release soon :</span>
-                                    <li>Active management strategies</li>
-                                    <li>Quaterly, half-yearly and yearly equity rebalancing</li>
-                                    <li>Sorting trades and statistics on volatility</li>
-                                    <li>... and more</li>
-                                </ul>
-                            </li>
+                        <div className={"projectDetails"}>
+                            <h4>Project details</h4>
+                            <ul className={"projectDetails__list"}>
+                                <li>Real-Time stock data: finnhub.io</li>
+                                <li>Charts: react-chartjs-2</li>
+                                <li>Parallax background: React Scroll Parallax</li>
+                                <li>
+                                    <ul>
+                                        <span>Features to be release soon :</span>
+                                        <li>Active management strategies</li>
+                                        <li>Quaterly, half-yearly and yearly equity rebalancing</li>
+                                        <li>Sorting trades and statistics on volatility</li>
+                                        <li>... and more</li>
+                                    </ul>
+                                </li>
 
-                        </ul>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
