@@ -2,7 +2,9 @@ import React, {useEffect, useState} from "react";
 import {getData, GetSymbols} from "../api/api"
 import {SPYBenchmarkStrategy} from "./spyBenchmarkStrategy";
 import {AllWeatherStrategy} from "./allWeatherStrategy";
-import {GrowthStrategy} from "./GrowthStrategy";
+import {GrowthStrategy} from "./growthStrategy";
+import {BondStockHedged} from "./BondStockHedged";
+import {DividendBonds} from "./DividendBonds";
 
 export const StrategiesAlgo = ({callback, strategyToDisplay}) => {
     const [symbol, setSymbol] = useState("SPY");
@@ -38,6 +40,8 @@ export const StrategiesAlgo = ({callback, strategyToDisplay}) => {
             {(strategyToDisplay === "Benchmark SPY") && <SPYBenchmarkStrategy quotes={SPY} dates={SPYDates} callback={callback}/>}
             {(strategyToDisplay === "Growth portfolio") && <GrowthStrategy dates={SPYDates} callback={callback}/>}
             {(strategyToDisplay === "All Weather portfolio") && <AllWeatherStrategy dates={SPYDates} callback={callback}/>}
+            {(strategyToDisplay === "Bond & Stock Hedged") && <BondStockHedged dates={SPYDates} callback={callback}/>}
+            {(strategyToDisplay === "Dividend & Bonds") && <DividendBonds dates={SPYDates} callback={callback}/>}
         </>
     )
 }

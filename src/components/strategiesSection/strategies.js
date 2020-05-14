@@ -15,7 +15,7 @@ export const Strategies = () => {
     const [strategyInfoBtn, setStrategyInfoBtn] = useState(true);
     const [strategyAnime, setStrategyAnime] = useState("");
 
-    const strategiesList = ["Benchmark SPY", "Momentum", "Mean-Reversion", "Value portfolio", "Growth portfolio", "All Weather portfolio"];
+    const strategiesList = ["Benchmark SPY", "Bond & Stock Hedged", "Dividend & Bonds", "Growth portfolio", "All Weather portfolio"];
     const [strategyToDisplay, setStrategyToDisplay] = useState(strategiesList[0]);
     const handleShowCards = (e) => {
         e.preventDefault();
