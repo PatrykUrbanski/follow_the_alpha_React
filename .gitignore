@@ -106,8 +106,8 @@ dist
 
 scss/
 .idea
-package.json
-package-lock.json
-webpack.config.js
-gulpfile.js
-.babelrc
+#package.json
+#package-lock.json
+#webpack.config.js
+#gulpfile.js
+#.babelrc
