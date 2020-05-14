@@ -37,8 +37,9 @@
       right: 10%;
     }
     &.thirdEl {
-      bottom: 100px;
-      right: calc(50% - 150px /2);
+      bottom: 50px;
+      margin-top: 100px;
+      left: calc(50% - 300px / 2);
       p {
         display: flex;
         flex-direction: column;
@@ -46,7 +47,8 @@
         align-items: center;
         text-transform: uppercase;
         font-size: 3rem;
-        left: 50%;
+        width: 300px;
+        left: calc(50% - 300px / 2);
         .animeSpan {
           margin: 20px;
         }
@@ -54,5 +56,34 @@
     }
   }
 }
+
+.crossText {
+  animation: fadeOutAnimation .3s ease-in-out;
+  animation-delay: 1.6s;
+  animation-fill-mode: both;
+  span {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -10px;
+      width: 100%;
+      background: #e94a45;
+      height: 6px;
+      animation: crossTextAnimation .5s linear;
+      animation-fill-mode: both;
+      animation-delay: 1s;
+    }
+  }
+}
+
+.growText {
+  animation: growTextAnimation .5s ease-in-out;
+  animation-delay: 1.9s;
+  animation-fill-mode: both;
+}
+
 
 

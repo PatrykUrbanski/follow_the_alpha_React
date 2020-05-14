@@ -58,3 +58,34 @@ html.is-animating .transition-fade {
     opacity: 1;
   }
 }
+
+
+@keyframes fadeOutAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes crossTextAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 130%;
+  }
+}
+
+@keyframes growTextAnimation {
+  0% {
+    font-size: 3rem;
+  }
+  100% {
+    font-size: 4.2rem;
+    letter-spacing: 10px;
+    color: #e94a45;
+  }
+}
