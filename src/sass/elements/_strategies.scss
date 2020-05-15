@@ -13,19 +13,33 @@
       text-align: center;
       line-height: 3rem;
     }
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-      line-height: 1.5rem;
-      &.warn {
-        font-size: 1rem;
-        color: #e94a45;
+    &__text {
+      @include tablet {
+        display: flex;
+        justify-content: space-between;
+      }
+      &--box {
+        @include tablet {
+          width: 50%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        p {
+          font-size: 1.2rem;
+          margin-bottom: 15px;
+          line-height: 1.5rem;
+          &.warn {
+            font-size: 1rem;
+            color: #e94a45;
+            text-align: right;
+          }
+        }
       }
     }
-    span {
-
-    }
   }
+
   &__cards {
     display: flex;
     justify-content: center;
@@ -74,6 +88,10 @@
         transition: .2s;
         cursor: pointer;
         width: 180px;
+        display: none;
+        @include tablet {
+          display: inline-block;
+        }
         &:hover {
           color: #e94a45;
           transform: scale(1.1);

@@ -1,5 +1,6 @@
 import React from "react";
 import {EducationSwiper} from "../education/education";
+import imageBg from "../../images/bgChart.png";
 
 export const AuthorPage = () => {
     return (
@@ -9,7 +10,12 @@ export const AuthorPage = () => {
                     <h1>Author</h1>
                     <div className={"authorPage__info__box"}>
                         <h2>Patryk Urbański</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, hic sunt! Aut esse et, fugiat illo laborum nemo qui quis quisquam quo voluptatibus. Alias dolore nulla quo quod, reiciendis veritatis?</p>
+                        <p>I'm highly motivated, result driven junior front-end developer.
+                            Professionally, interested in web developing, new trends in tech, disturbing innovations, equity trading and portfolio management.
+                            Try really hard to develop better design sense and reduce saying "damn, that's not pretty" when using Adobe XD.</p>
+                        <p>Personally, fan of inconspicuous restaurants in nice places all around the globe, struggle to keep my plants alive,
+                            swapped travels for life with little corgi with whom use to bark on people if earlier than 7am.</p>
+                        <span>Contact Me </span>
                         <div className={"authorPage__info__box__contact"}>
                             <a target={"_blank"} href={"https://github.com/PatrykUrbanski"}><i className="fab fa-github"/></a>
                             <a target={"_blank"} href={"https://www.linkedin.com/in/patryk-urbanski/"}><i className="fab fa-linkedin-in"/></a>
@@ -18,7 +24,7 @@ export const AuthorPage = () => {
                     </div>
                 </div>
 
-                <div className={"ChartAnimation"} style={{backgroundImage: "url(./images/bgChart.png)"}}/>
+                <div className={"ChartAnimation"} style={{backgroundImage: "url(src/images/bgChart.png)"}}/>
 
 
                 <div className={"authorPage__tech"}>
@@ -26,7 +32,7 @@ export const AuthorPage = () => {
                     <div className={"authorPage__tech__box"}>
                         <h2>Technology stack</h2>
                         <ul className={"techStack"}>
-                            <li><i className="fab fa-react"/><strong>React</strong> <span>hooks//arrow function component</span></li>
+                            <li><i className="fab fa-react"/><strong>React</strong> <span>hooks//arrow function component//react-router</span></li>
                             <li><i className="fab fa-js"/><strong>JavaScrip</strong> <span>ECMA6 +</span></li>
                             <li><i className="fab fa-html5"/><strong>HTML 5</strong></li>
                             <li><i className="fab fa-css3-alt"/><strong>CSS 3</strong> <span>SCSS</span></li>

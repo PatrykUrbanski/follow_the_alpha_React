@@ -1,7 +1,9 @@
-import React from "react";
-import {ParallaxBackground} from "./paralaxSection";
+import React, {createRef} from "react";
+
 
 export const Banner = () => {
+
+
     return (
         <>
             <section className="banner container">
@@ -18,11 +20,10 @@ export const Banner = () => {
                         </div>
                     </div>
                 </div>
-
-                <div className="arrow">
-                    <span></span>
-                    <span></span>
-                </div>
+                <a href={"#strategySection"} className={"arrow"}>
+                    <span/>
+                    <span/>
+                </a>
             </section>
         </>
     )

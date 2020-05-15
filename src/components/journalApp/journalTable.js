@@ -20,10 +20,14 @@ export const JournalTable = ({addTrades}) => {
     useEffect(() => {
         allTrades = JSON.parse(localStorage.getItem("trades"));
         let tempSum = 0;
-        allTrades.forEach(trade => {
-            if (trade != null) tempSum += parseFloat(trade.resultValue);
-        });
-        setSum(tempSum)
+        if (allTrades === null) {
+
+        } else {
+            allTrades.forEach(trade => {
+                if (trade != null) tempSum += parseFloat(trade.resultValue);
+            });
+            setSum(tempSum)
+        }
     }, [reload]);
 
     const handleDeleteBtn = (e) => {

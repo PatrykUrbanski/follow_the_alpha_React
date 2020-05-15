@@ -22,7 +22,7 @@
       position: relative;
       h2 {
         font-size: 2rem;
-        letter-spacing: 7px;
+        letter-spacing: 5px;
         margin-bottom: 20px;
         font-weight: 700;
         &::after {
@@ -38,10 +38,21 @@
       }
       p {
         line-height: 1.3rem;
+        text-indent: 20px;
+        margin-bottom: 30px;
         @include tablet {
           font-size: 1.2rem;
           line-height: 1.5rem;
         }
+      }
+      span {
+        text-align: center;
+        width: 100%;
+        font-size: 1.5rem;
+        font-weight: 700;
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 5px;
       }
       &__contact {
         margin-top: 30px;
@@ -111,9 +122,12 @@
           height: 1px;
           background: linear-gradient(90deg, $main-bg, $main-text);
           position: absolute;
-          top: 250px;
+          top: 271px;
           right: 14px;
           z-index: 0;
+          @include tablet {
+            top: 250px;
+          }
         }
       }
       .devTools {

@@ -19,7 +19,7 @@ export const DividendBonds = ({dates, callback}) => {
         return Math.floor(Date.now() / 1000 - (24 * 3600));
     };
 
-    const method = "growth grwotjrdasdasdasd";
+    const method = `Strategy based on dividend accumulating funds. Allocate assets to equal parts of AOR and AOA (Respectively, growth and aggressive, multi-cap companies in developed markets), hedged with BSV (Short-term bonds Fund)`;
 
     useEffect(() => {
         growthStrategyTickers.forEach((ticker, index) => {

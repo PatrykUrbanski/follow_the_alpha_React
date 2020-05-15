@@ -19,7 +19,7 @@ export const BondStockHedged = ({dates, callback}) => {
         return Math.floor(Date.now() / 1000 - (24 * 3600));
     };
 
-    const method = "growth grwotjrdasdasdasd";
+    const method = `Classic allocation of equal parts of IVV (Sp500 tracker Fund) and BSV (Short-term bonds) with hedge from SCO (Crude Oil short Fund)`;
 
     useEffect(() => {
         growthStrategyTickers.forEach((ticker, index) => {

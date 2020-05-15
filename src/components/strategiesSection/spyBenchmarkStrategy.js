@@ -1,5 +1,6 @@
-import React, {useEffect, useState} from "react";
+import React, {Component, useEffect, useState} from "react";
 import {ChartDisplay_strategies} from "../chart/ChartDisplay_strategies";
+import {withRouter} from "react-router-dom";
 
 export const SPYBenchmarkStrategy = ({quotes, dates, callback}) => {
     const [prices, setPrices] = useState(false);
@@ -22,6 +23,7 @@ export const SPYBenchmarkStrategy = ({quotes, dates, callback}) => {
     if (!prices || !dateElems) return null;
 
     callback(prices, method);
+
 
 
     return (

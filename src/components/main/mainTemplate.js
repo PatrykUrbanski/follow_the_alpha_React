@@ -33,8 +33,8 @@ export const MainTemplate = () => {
                         classNames="fade">
                         <Switch location={location}>
                             <Route exact path={"/"} component={LandingPage}/>
-                            <Route path={"/journalApp"} component={JournalApp}/>
-                            <Route path={"/authorPage"} component={AuthorPage}/>
+                            <Route exact path={"/journalApp"} component={JournalApp}/>
+                            <Route exact path={"/authorPage"} component={AuthorPage}/>
                         </Switch>
                     </CSSTransition>
                 </TransitionGroup>

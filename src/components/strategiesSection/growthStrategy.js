@@ -19,7 +19,7 @@ export const GrowthStrategy = ({dates, callback}) => {
         return Math.floor(Date.now() / 1000 - (24 * 3600));
     };
 
-    const method = "growth grwotjrdasdasdasd";
+    const method = `Strategy based on growth type companies. Allocate assets in XLK (Technology Fund), VHT (Health Care Fund) and IBB (BioTechnology Fund).`;
 
     useEffect(() => {
         growthStrategyTickers.forEach((ticker, index) => {

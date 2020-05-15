@@ -19,7 +19,7 @@ export const AllWeatherStrategy = ({dates, callback}) => {
         return Math.floor(Date.now() / 1000 - (24 * 3600));
     };
 
-    const method = "all weather porftolio homie";
+    const method = `Growth oriented variation of Ray Dalio's All Weather Strategy. Allocating assets in: IVV (Sp500 tracker), VEU (Large-cap, all world ex US) and BND (Total Bond Market Fund)`;
 
     useEffect(() => {
         allWeatherStrategyTickers.forEach((ticker, index) => {

@@ -24,14 +24,14 @@ export const Header = () => {
         <>
             <header className="header">
                 <nav className="header__nav container">
-                    <Link to={"/"}><img className="logo" src="./images/logo1.png" alt="logo"></img></Link>
+                    <Link to={"/"}><img className="logo" src="src/images/logo1.png" alt="logo"></img></Link>
                         <a href="#" onClick={handleOpenNav} className={`menu-btn open`}>
                             <i className="fas fa-braille"/>
                         </a>
                         <div className={`header__nav__list ${openMenu}`}>
                             <i id="closeBtn" onClick={handleCloseNav} className={`fas fa-times visible`}/>
-                            <a href={"#strategiesSection"} onClick={handleCloseNav}><Link to={"/#strategiesSection"}>Strategies</Link></a>
-                            <a href={"#"} onClick={handleCloseNav}><Link to={"/journalApp"}>Journal App</Link></a>
+                            <a href="#" onClick={handleCloseNav}><Link to={"/"}>Strategies</Link></a>
+                            <a href="#" onClick={handleCloseNav}><Link to={"/journalApp"}>Journal App</Link></a>
                             <a href="#" onClick={handleCloseNav}><Link to={"/authorPage"}>Author & Project Details</Link></a>
                         </div>
                 </nav>
