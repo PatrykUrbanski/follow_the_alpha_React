@@ -16,7 +16,7 @@
 - Active management strategies,
 - equity rebalancing,
 - sorting trades and statistics on volatility
-                                      ... and more!
+                                      
                                     
 ### Build with:
 - **React.js** // hooks// arrow Function components// react-router,
