@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {Link, NavLink} from "react-router-dom";
+import logoIcon from "../../images/logo1.png"
 
 export const Header = () => {
     const [openMenu, setOpenMenu] = useState("");
@@ -23,7 +24,7 @@ export const Header = () => {
         <>
             <header className="header">
                 <nav className="header__nav container">
-                    <Link to={"/"}><img className="logo" src="./images/logo1.png" alt="logo" /></Link>
+                    <Link to={"/"}><img className="logo" src="./images/logo1.png" alt="logo"></img></Link>
                         <a href="#" onClick={handleOpenNav} className={`menu-btn open`}>
                             <i className="fas fa-braille"/>
                         </a>
