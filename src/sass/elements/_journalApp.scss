@@ -68,15 +68,31 @@
 
 .tradeTable {
   &__content {
-    h2 {
-      font-size: 1.8rem;
-      margin-top: 50px;
-      margin-bottom: 20px;
-      padding-bottom: 15px;
-      border-bottom: 4px solid $main-text;
-      i {
-        position: absolute;
+    &__headlines {
+      position: relative;
+      h2 {
+        font-size: 1.8rem;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 4px solid $main-text;
+        i {
+          position: absolute;
+        }
       }
+      h3 {
+        position: absolute;
+        top: -6px;
+        right: 0;
+        border: 2px solid #2E82D5;
+        padding: 15px;
+        transition: .2s;
+        &:active {
+          transform: scale(.9);
+          box-shadow: 0 0 3px #2E82D5 inset;
+        }
+      }
+
     }
     table {
       width: 90%;

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {getData} from "../api/api";
 import {JournalTable} from "./journalTable";
+import {demoTrades} from "./demoTrades";
 var uniqid = require('uniqid');
 
 export const JournalApp = () => {
@@ -42,6 +43,8 @@ export const JournalApp = () => {
             localStorage.setItem("trades", JSON.stringify(dataFromLS))
         }
     };
+
+
 
     const getReturnInUsd = (getInLS, getOutLS, symbol, newTrade) => {
         getData(getInLS, getOutLS, symbol)

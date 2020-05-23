@@ -58,7 +58,7 @@ export const Strategies = () => {
                             <p>Slippage, broker commission, expanse ratio etc. are not included. Following data are for illustrative and inspiration purposes only.</p>
                         </div>
                         <div className={"strategies__page__text--box"}>
-                            <p className={"warn"}>Do not put your money to the market based only on what you see here.</p>
+                            <p className={"warn"}>Do not put your money on the market based only on what you see here.</p>
                             <p className={"warn"}>Do not put money you can't lose on the market.</p>
                             <p className={"warn"}>Do not spend all of your buying power on one equity. </p>
                             <p className={"warn"}>Do not trade based on what some guy in the internet said.</p>
@@ -73,7 +73,7 @@ export const Strategies = () => {
                     <ul className="card-list" style={{height: `${cardListHeight ? (strategiesList.length) * 60 + "px" : "0"}`}}>
                         {strategiesList.map((strategyElem, index) =>
                             <li key={index}>
-                                <a className={"card"} href="#" onClick={e => handleChangeStrategy(e, name)} name={strategyElem}>{strategyElem}</a>
+                                <a className={"card"} href="#" onClick={e => handleChangeStrategy(e)} name={strategyElem}>{strategyElem}</a>
                             </li>)}
                     </ul>
 

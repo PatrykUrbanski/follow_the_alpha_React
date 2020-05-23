@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Line} from "react-chartjs-2";
 import {JournalChart} from "./journalChart";
+import {demoTrades} from "./demoTrades";
 var uniqid = require('uniqid');
 
 export const JournalTable = ({addTrades}) => {
@@ -43,6 +44,19 @@ export const JournalTable = ({addTrades}) => {
         })
     };
 
+    const handleDemoTrades = () => {
+        let dataFromLS = [];
+        if (localStorage.getItem("trades") != null) {
+            dataFromLS = JSON.parse(localStorage.getItem("trades"));
+            dataFromLS.push(...demoTrades);
+            localStorage.setItem("trades", JSON.stringify(dataFromLS))
+        } else {
+            dataFromLS.push(...demoTrades);
+            localStorage.setItem("trades", JSON.stringify(dataFromLS))
+        }
+        setReload(prevState => !prevState)
+    };
+
 
 
     return (
@@ -51,7 +65,10 @@ export const JournalTable = ({addTrades}) => {
 
             <section className="tradeTable">
                 <div className="tradeTable__content container">
-                    <h2>Recent Trades</h2>
+                    <div className={"tradeTable__content__headlines"}>
+                        <h2>Recent Trades</h2>
+                        <h3 onClick={handleDemoTrades}>Add some demo trades</h3>
+                    </div>
                     <table>
                         <thead>
                         <tr className="row">
