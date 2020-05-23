@@ -18,7 +18,7 @@ module.exports = {
         contentBase: path.join(__dirname, `./src/`),
         publicPath: "/build/",
         compress: true,
-        port: 3004,
+        port: 3008,
         historyApiFallback: true
     },
     module: {
@@ -46,6 +46,9 @@ module.exports = {
                         }
                     },
                     {
+                        loader: "resolve-url-loader"
+                    },
+                    {
                         loader: 'postcss-loader',
                         options: {
                             plugins: () => [autoprefixer()],
@@ -60,8 +63,8 @@ module.exports = {
                 loader: "file-loader",
                 options: {
                     name: "[name].[ext]",
-                    publicPath: `./src/images/`,
-                    outputPath: `./src/images/`
+                    publicPath: `./src/assets/`,
+                    outputPath: `.src/assets/`
                 }
             },
         ]

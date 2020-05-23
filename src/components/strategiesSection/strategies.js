@@ -81,8 +81,7 @@ export const Strategies = () => {
 
 
 
-
-                {!totalReturn ? <h1>elo</h1> : (
+                {!totalReturn ? <h1>Loading data... internal server problems</h1> : (
 
                     <div className="strategies__info">
                         <ul>

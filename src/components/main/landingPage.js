@@ -9,7 +9,6 @@ export const LandingPage = () => {
             <div className={"pageToTransit"}>
                 <Banner/>
                 <ParallaxBackground/>
-                <Strategies/>
             </div>
         </>
     )

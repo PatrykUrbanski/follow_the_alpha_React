@@ -6,6 +6,7 @@ import {AuthorPage} from "../authorPage/authorPage";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 import {Route, Switch} from "react-router-dom";
 import {LoadingScreen} from "../loadingScreen/loadingScreen";
+import {Strategies} from "../strategiesSection/strategies";
 
 export const MainTemplate = () => {
     const [loading, setLoading] = useState(true);
@@ -35,6 +36,7 @@ export const MainTemplate = () => {
                             <Route exact path={"/"} component={LandingPage}/>
                             <Route exact path={"/journalApp"} component={JournalApp}/>
                             <Route exact path={"/authorPage"} component={AuthorPage}/>
+                            <Route exact path={"/strategies"} component={Strategies}/>
                         </Switch>
                     </CSSTransition>
                 </TransitionGroup>

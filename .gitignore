@@ -106,8 +106,8 @@ typings/
 
 scss/
 .idea
-#package.json
+#package1.json
 #package-lock.json
-#webpack.config.js
+#webpack.config1.js
 #gulpfile.js
 #.babelrc
