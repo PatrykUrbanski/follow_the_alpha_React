@@ -18,7 +18,7 @@ module.exports = {
         contentBase: path.join(__dirname, `./src/`),
         publicPath: "/build/",
         compress: true,
-        port: 3008,
+        port: 3004,
         historyApiFallback: true
     },
     module: {

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {ChartDisplay_strategies} from "../chart/ChartDisplay_strategies";
 import {getData} from "../api/api";
+import {getFiveYearsFromLastSession, getLastTradingSession} from "./strategiesAlgo";
 
 export const GrowthStrategy = ({dates, callback}) => {
 
@@ -12,18 +13,13 @@ export const GrowthStrategy = ({dates, callback}) => {
     const functions = [setXLKReturn, setVHTReturn, setIBBReturn];
 
 
-    const getTenYearsFromLastSession = (lastSession) => {
-        return lastSession - 3600 * 24 * 365.25 * 10
-    };
-    const getLastTradingSession = () => {
-        return Math.floor(Date.now() / 1000 - (24 * 3600));
-    };
+
 
     const method = `Strategy based on growth type companies. Allocate assets in XLK (Technology Fund), VHT (Health Care Fund) and IBB (BioTechnology Fund).`;
 
     useEffect(() => {
         growthStrategyTickers.forEach((ticker, index) => {
-            getData(getTenYearsFromLastSession(getLastTradingSession()), getLastTradingSession(), ticker)
+            getData(getFiveYearsFromLastSession(getLastTradingSession()), getLastTradingSession(), ticker)
                 .then(resp => resp.json())
                 .then(data => {
                     functions[index](data.c);

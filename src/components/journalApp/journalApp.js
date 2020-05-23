@@ -120,21 +120,25 @@ export const JournalApp = () => {
                 <div className="journalApp__content container">
                     <h2 className={"title"}> Journal App </h2>
                     <p>Add your trades and track your portfolio</p>
-                    <h2 onClick={handleOpenForm}>Add new trade
+                    <h2 className={"titleAdd"} onClick={handleOpenForm}>Add new trade
                         <i className="addBtn fas fa-plus-circle" style={{display: `${!openForm ? "inline-block" : "none"}`}}/>
                         <i className="hideBtn fas fa-eye-slash" style={{display: `${!openForm ? "none" : "inline-block"}`}}/>
                     </h2>
                     <form style={{height: `${!openForm ? "0" : "400px"}`}} onSubmit={e => handleSendForm(e)}>
                         <span className="errorMSG" style={{height: `${!errorMsg ? "0px" : "25px"}`}}>You need to properly fill all boxes.</span>
-                        <label className="symbol">Currently we support all S&P 500 companies
-                            <input className="formElem" type="text" placeholder="Stock symbol" value={symbol} name={"symbol"} onChange={e => setSymbol(e.target.value)}/>
+                        <span className={"info"}>Currently we support all S&P 500 companies</span>
+                        <label className="symbol">Stock:
+                            <input className="formElem" type="text" placeholder="AAPL, KO, BA" value={symbol} name={"symbol"} onChange={e => setSymbol(e.target.value)}/>
+                            <span className={"tip"}>AAPL (Apple), KO (Coca-Cola), BA (Boeing) etc.</span>
                         </label>
-                        <select className="longShort formElem" placeholder={"Long/Short"} value={longShort} onChange={e => setLongShort(e.target.value)}>
-                            <option value="long">LONG</option>
-                            <option value="short">SHORT</option>
-                        </select>
-                        <label className="size">Size
-                            <input className="formElem" type="text" name={"size"} value={size} onChange={e => setSize(e.target.value)}/>
+                        <label>Direction:
+                            <select className="longShort formElem" placeholder={"Long/Short"} value={longShort} onChange={e => setLongShort(e.target.value)}>
+                                <option value="long">BUY</option>
+                                <option value="short">SELL</option>
+                            </select>
+                        </label>
+                        <label className="size">Size:
+                            <input className="formElem" type="text" name={"size"} placeholder={"Number of stocks"} value={size} onChange={e => setSize(e.target.value)}/>
                         </label>
 
                         <label className="getIn">Get in:

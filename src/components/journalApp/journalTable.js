@@ -67,7 +67,7 @@ export const JournalTable = ({addTrades}) => {
                 <div className="tradeTable__content container">
                     <div className={"tradeTable__content__headlines"}>
                         <h2>Recent Trades</h2>
-                        <h3 onClick={handleDemoTrades}>Add some demo trades</h3>
+                        <h3 className={"btnDemo"} onClick={handleDemoTrades}>Add some demo trades</h3>
                     </div>
                     <table>
                         <thead>

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {ChartDisplay_strategies} from "../chart/ChartDisplay_strategies";
 import {getData} from "../api/api";
+import {getFiveYearsFromLastSession, getLastTradingSession} from "./strategiesAlgo";
 
 export const BondStockHedged = ({dates, callback}) => {
 
@@ -12,18 +13,12 @@ export const BondStockHedged = ({dates, callback}) => {
     const functions = [setIVVReturn, setSCOReturn, setBSVReturn];
 
 
-    const getTenYearsFromLastSession = (lastSession) => {
-        return lastSession - 3600 * 24 * 365.25 * 10
-    };
-    const getLastTradingSession = () => {
-        return Math.floor(Date.now() / 1000 - (24 * 3600));
-    };
 
     const method = `Classic allocation of equal parts of IVV (Sp500 tracker Fund) and BSV (Short-term bonds) with hedge from SCO (Crude Oil short Fund)`;
 
     useEffect(() => {
         growthStrategyTickers.forEach((ticker, index) => {
-            getData(getTenYearsFromLastSession(getLastTradingSession()), getLastTradingSession(), ticker)
+            getData(getFiveYearsFromLastSession(getLastTradingSession()), getLastTradingSession(), ticker)
                 .then(resp => resp.json())
                 .then(data => {
                     functions[index](data.c);

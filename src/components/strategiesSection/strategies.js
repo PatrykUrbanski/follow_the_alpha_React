@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {StrategiesAlgo} from "./strategiesAlgo";
 import {std} from "mathjs";
-import { CircleToBlockLoading } from 'react-loadingg';
+
 
 export const Strategies = () => {
 
@@ -54,7 +54,7 @@ export const Strategies = () => {
                     <div className={"strategies__page__text"}>
                         <div className={"strategies__page__text--box"}>
                             <p>Actual results based on end-of-day prices.</p>
-                            <p>Time period: last 10 year from last trading session.</p>
+                            <p>Time period: last 5 year from last trading session.</p>
                             <p>Slippage, broker commission, expanse ratio etc. are not included. Following data are for illustrative and inspiration purposes only.</p>
                         </div>
                         <div className={"strategies__page__text--box"}>
@@ -81,7 +81,7 @@ export const Strategies = () => {
 
 
 
-                {!totalReturn ? <h1>Loading data... internal server problems</h1> : (
+                {!totalReturn ? <h1 className={"loadingAnime"}>Loading data... </h1> : (
 
                     <div className="strategies__info">
                         <ul>
@@ -90,9 +90,9 @@ export const Strategies = () => {
                                 <i className="fas fa-times-circle" style={{display: `${strategyInfoBtn ? "none" : "inline-block"}`}}/>
                             </li>
                             <li>Total return:<span>{totalReturn + "%"}</span></li>
-                            <li>Annual average return:<span>{(totalReturn / 10).toFixed(2) + "%"}</span></li>
+                            <li>Annual average return:<span>{(totalReturn / 5).toFixed(2) + "%"}</span></li>
                             <li>Average standard deviation<span>{stDev}</span></li>
-                            <li>Yearly Sharpe Ratio<span>{(totalReturn / stDev / 10).toFixed(2)}</span></li>
+                            <li>Yearly Sharpe Ratio<span>{(totalReturn / stDev / 5).toFixed(2)}</span></li>
 
                         </ul>
                         <div className="methodologyBox" style={{height: `${strategyInfoBtn ? "0" : "100%"}`}}>

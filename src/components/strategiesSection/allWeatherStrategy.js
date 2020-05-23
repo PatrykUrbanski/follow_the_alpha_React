@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {ChartDisplay_strategies} from "../chart/ChartDisplay_strategies";
 import {getData} from "../api/api";
+import {getFiveYearsFromLastSession, getLastTradingSession} from "./strategiesAlgo";
 
 export const AllWeatherStrategy = ({dates, callback}) => {
 
@@ -12,18 +13,12 @@ export const AllWeatherStrategy = ({dates, callback}) => {
     const functions = [setIVVReturn, setVEUReturn, setBNDReturn];
 
 
-    const getTenYearsFromLastSession = (lastSession) => {
-        return lastSession - 3600 * 24 * 365.25 * 10
-    };
-    const getLastTradingSession = () => {
-        return Math.floor(Date.now() / 1000 - (24 * 3600));
-    };
 
     const method = `Growth oriented variation of Ray Dalio's All Weather Strategy. Allocating assets in: IVV (Sp500 tracker), VEU (Large-cap, all world ex US) and BND (Total Bond Market Fund)`;
 
     useEffect(() => {
         allWeatherStrategyTickers.forEach((ticker, index) => {
-            getData(getTenYearsFromLastSession(getLastTradingSession()), getLastTradingSession(), ticker)
+            getData(getFiveYearsFromLastSession(getLastTradingSession()), getLastTradingSession(), ticker)
                 .then(resp => resp.json())
                 .then(data => {
                     functions[index](data.c);

@@ -6,20 +6,26 @@ import {GrowthStrategy} from "./growthStrategy";
 import {BondStockHedged} from "./BondStockHedged";
 import {DividendBonds} from "./DividendBonds";
 
+
+export const getFiveYearsFromLastSession = (lastSession) => {
+    return lastSession - 3600 * 24 * 365.25 * 5
+};
+
+export const getLastTradingSession = () => {
+    return Math.floor(Date.now() / 1000 - (24 * 3600));
+};
+
+
 export const StrategiesAlgo = ({callback, strategyToDisplay}) => {
     const [symbol, setSymbol] = useState("SPY");
     const [SPY, setSPY] = useState(false);
     const [SPYDates, setSPYDates] = useState(false);
 
-    const getTenYearsFromLastSession = (lastSession) => {
-        return lastSession - 3600 * 24 * 365.25 * 10
-    };
-    const getLastTradingSession = () => {
-        return Math.floor(Date.now() / 1000 - (24 * 3600));
-    };
+
+
 
     useEffect(() => {
-        getData(getTenYearsFromLastSession(getLastTradingSession()), getLastTradingSession(), symbol)
+        getData(getFiveYearsFromLastSession(getLastTradingSession()), getLastTradingSession(), symbol)
         .then(resp => resp.json())
             .then(data => {
                 setSPY(data.c);

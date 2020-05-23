@@ -20,7 +20,7 @@ export const Banner = () => {
                         </div>
                     </div>
                 </div>
-                <a href={"#strategySection"} className={"arrow"}>
+                <a href={"#parallax"} className={"arrow"}>
                     <span/>
                     <span/>
                 </a>
