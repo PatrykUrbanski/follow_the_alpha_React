@@ -14,7 +14,7 @@ export const AuthorPage = () => {
                             Professionally, interested in web developing, new trends in tech, disturbing innovations, equity trading and portfolio management.
                             Try really hard to develop better design sense and reduce saying "damn, that's not pretty" when using Adobe XD.</p>
                         <p>Personally, fan of inconspicuous restaurants in nice places all around the globe, struggle to keep my plants alive,
-                            swapped travels for life with little corgi with whom use to bark on people if earlier than 7am.</p>
+                            switched travels for life with little corgi with whom I bark on people if it's earlier than 7am.</p>
                         <span>Contact Me </span>
                         <div className={"authorPage__info__box__contact"}>
                             <a target={"_blank"} href={"https://github.com/PatrykUrbanski"}><i className="fab fa-github"/></a>
@@ -24,7 +24,7 @@ export const AuthorPage = () => {
                     </div>
                 </div>
 
-                <div className={"ChartAnimation"} style={{backgroundImage: "url(src/images/bgChart.png)"}}/>
+                <div className={"ChartAnimation"} style={{backgroundImage: "url(./images/bgChart.png)"}}/>
 
 
                 <div className={"authorPage__tech"}>
