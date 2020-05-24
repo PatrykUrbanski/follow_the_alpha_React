@@ -2,11 +2,11 @@ import React, {createRef, useState} from "react";
 
 
 export const Banner = () => {
-    const [scrollY, setScrollY] = useState(1000);
+    const [scrollY, setScrollY] = useState(800);
 
     const handleClick = (e) => {
         e.preventDefault();
-        setScrollY( scrollY + 1000);
+        setScrollY( scrollY + 800);
         window.scrollTo(0, scrollY);
     };
 

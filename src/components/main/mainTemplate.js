@@ -36,7 +36,7 @@ export const MainTemplate = () => {
                             <Route exact path={"/"} component={LandingPage}/>
                             <Route exact path={"/journalApp"} component={JournalApp}/>
                             <Route exact path={"/authorPage"} component={AuthorPage}/>
-                            {/*<Route exact path={"/strategies"} component={Strategies}/>*/}
+                            <Route exact path={"/strategies"} component={Strategies}/>
                         </Switch>
                     </CSSTransition>
                 </TransitionGroup>

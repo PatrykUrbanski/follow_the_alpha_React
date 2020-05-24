@@ -23,7 +23,7 @@ export const AuthorPage = () => {
                     </div>
                 </div>
 
-                <div className={"ChartAnimation"} style={{backgroundImage: "url(./images/bgChart.png)"}}/>
+                <div className={"ChartAnimation"} style={{backgroundImage: "url(../src/images/bgChart.png)"}}/>
 
 
                 <div className={"authorPage__tech"}>
