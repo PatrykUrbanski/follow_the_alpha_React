@@ -1,6 +1,5 @@
 import React from "react";
-import {EducationSwiper} from "../education/education";
-import imageBg from "../../images/bgChart.png";
+
 
 export const AuthorPage = () => {
     return (

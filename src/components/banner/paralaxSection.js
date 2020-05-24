@@ -1,11 +1,9 @@
 import { Parallax } from 'react-scroll-parallax';
 import React, {useState} from 'react';
-import ScrollAnimation from "react-animate-on-scroll"
-import imageBg from "../../images/bg3.jpg"
-import elemcCon from "../../images/elemContent.jpg"
-import elemcCon2 from "../../images/elemContentRight.jpg"
+
 import {Fade} from "react-reveal";
 import {Link} from "react-router-dom";
+
 
 
 
@@ -18,7 +16,7 @@ export const ParallaxBackground = () => {
     return (
         <>
             <div className={"parallax"} id={"parallax"}>
-                <Parallax y={[-50, 0]} tagOuter="figure">
+                <Parallax y={[-40, 0]} tagOuter="figure">
                     <div className={"parallax__bg"} >
                         <img src={"./images/bg3.jpg"}/>
                     </div>
@@ -39,10 +37,38 @@ export const ParallaxBackground = () => {
                     </div>
                     </Fade>
 
+                    <Fade>
+                        <div className={"listElems"}>
+                                <ul>
+                                    <Fade left>
+                                    <li>
+                                        <i className="fas fa-times"/>
+                                        <span>They buy on tops.</span>
+                                    </li>
+                                    </Fade>
+                                    <Fade right>
+                                    <li>
+                                        <i className="fas fa-times"/>
+                                        <span>Sell on dips.</span>
+                                    </li>
+                                    </Fade>
+                                    <Fade left>
+                                    <li>
+                                        <i className="fas fa-times"/>
+                                        <span>Don't care about money management.</span>
+                                    </li>
+                                    </Fade>
+                                </ul>
+                                <div>
+                                    <span>Do not follow them</span>
+                                </div>
+                        </div>
+                    </Fade>
+
 
                     <div className={"parallax__content fourthEl"}>
                         <p>
-                            <Fade bottom cascade>
+                            <Fade cascade>
                                 <span className={"animeSpan"}>Follow</span>
                                 <span className={"animeSpan"}>the</span>
                                 <span className={"animeSpan animeText"}><Link to={"/strategies"}>alpha</Link></span>
