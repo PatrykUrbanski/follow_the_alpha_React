@@ -48,6 +48,7 @@ export const Strategies = () => {
 
     return (
         <>
+            <div className={"pageToTransit"}>
             <section className={`strategies container ${strategyAnime}`}>
                 <div className="strategies__page">
                     <h2>Alpha strategies</h2>
@@ -109,6 +110,7 @@ export const Strategies = () => {
                 </div>
             </section>
 
+            </div>
         </>
     )
 };

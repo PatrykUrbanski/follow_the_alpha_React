@@ -40,10 +40,9 @@
     }
   }
   .arrow {
-    position: absolute;
+    position: fixed;
     bottom: 50px;
     left: calc(50% - 65px / 2);
-    border: 2px solid $main-text;
     border-radius: 50%;
     padding: 18px 25px;
     transition: .3s;
@@ -63,15 +62,3 @@
 }
 
 
-//@keyframes flip4 {
-//  0% { margin-top: -360px; }
-//  5% { margin-top: -270px; }
-//  25% { margin-top: -270px; }
-//  30% { margin-top: -180px; }
-//  50% { margin-top: -180px; }
-//  55% { margin-top: -90px; }
-//  75% { margin-top: -90px; }
-//  80% { margin-top: 0; }
-//  99.99% { margin-top: 0; }
-//  100% { margin-top: -270px; }
-//}

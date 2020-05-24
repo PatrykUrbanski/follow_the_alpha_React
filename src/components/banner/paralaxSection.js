@@ -5,6 +5,7 @@ import imageBg from "../../images/bg3.jpg"
 import elemcCon from "../../images/elemContent.jpg"
 import elemcCon2 from "../../images/elemContentRight.jpg"
 import {Fade} from "react-reveal";
+import {Link} from "react-router-dom";
 
 
 
@@ -38,20 +39,14 @@ export const ParallaxBackground = () => {
                     </div>
                     </Fade>
 
-                    <div className={"parallax__content thirdEl"}>
+
+                    <div className={"parallax__content fourthEl"}>
                         <p>
-                            <ScrollAnimation className={"animeSpan"} animateIn={"fadeIn"} delay={100}>
-                                <span>Follow</span>
-                            </ScrollAnimation>
-                            <ScrollAnimation className={"animeSpan"} animateIn={"fadeIn"} delay={200}>
-                                <span>the</span>
-                            </ScrollAnimation>
-                            <ScrollAnimation className={"animeSpan"} animateIn={"fadeIn crossText"} delay={300}>
-                                <span>data</span>
-                            </ScrollAnimation>
-                            <ScrollAnimation className={"animeSpan"} animateIn={"fadeIn growText"} delay={700}>
-                                <span id={"strategySection"}>alpha</span>
-                            </ScrollAnimation>
+                            <Fade bottom cascade>
+                                <span className={"animeSpan"}>Follow</span>
+                                <span className={"animeSpan"}>the</span>
+                                <span className={"animeSpan animeText"}><Link to={"/strategies"}>alpha</Link></span>
+                            </Fade>
                         </p>
                     </div>
 

@@ -1,8 +1,14 @@
-import React, {createRef} from "react";
+import React, {createRef, useState} from "react";
 
 
 export const Banner = () => {
+    const [scrollY, setScrollY] = useState(700);
 
+    const handleClick = (e) => {
+        e.preventDefault();
+        setScrollY(scrollY + 700);
+        window.scrollTo(0, scrollY);
+    };
 
     return (
         <>
@@ -20,7 +26,7 @@ export const Banner = () => {
                         </div>
                     </div>
                 </div>
-                <a href={"#parallax"} className={"arrow"}>
+                <a href={"#"} onClick={e => handleClick(e)} className={"arrow"}>
                     <span/>
                     <span/>
                 </a>
