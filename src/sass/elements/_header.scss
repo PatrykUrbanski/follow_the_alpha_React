@@ -5,8 +5,6 @@
   top: 0;
   z-index: 5;
   background-color: $main-bg;
-
-
   &::after {
     content: "";
     width: 100%;
@@ -15,6 +13,7 @@
     position: absolute;
     top:80px;
   }
+
   &__nav {
     width: 90%;
     height: 100%;
@@ -22,6 +21,7 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+
     a {
       text-decoration: none;
       color: $main-text;
@@ -31,10 +31,12 @@
         opacity: 1;
       }
     }
+
     &__logo {
       font-size: 1.5rem;
       text-transform: uppercase;
     }
+
     .menu-btn {
       font-size: 1.3rem;
       position: absolute;
@@ -44,14 +46,17 @@
         display: none;
       }
     }
+
     &__list {
       display: inline-block;
+
       i {
         display: inline-block;
         @include tablet {
           display: none;
         }
       }
+
       a {
         padding-right: 60px;
         @include tablet {
@@ -59,6 +64,7 @@
           padding-left: 60px;
         }
       }
+
       @media (max-width: 767px) {
         height: 100%;
         width: 0;
@@ -71,6 +77,7 @@
         transition: .7s;
         padding-top: 60px;
         color: #e94a45;
+
         a {
           display: block;
           margin-left: 25px;
@@ -80,6 +87,7 @@
           color: #e94a45;
           opacity: 1;
         }
+
         i {
           font-size: 2rem;
           position: absolute;
@@ -88,6 +96,7 @@
         }
       }
     }
+
     .btn {
       display: none;
       @include tablet {

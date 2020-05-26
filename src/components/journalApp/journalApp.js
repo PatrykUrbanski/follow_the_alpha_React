@@ -1,22 +1,19 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {getData} from "../api/api";
 import {JournalTable} from "./journalTable";
-import {demoTrades} from "./demoTrades";
-var uniqid = require('uniqid');
+
+const uniqid = require('uniqid');
 
 export const JournalApp = () => {
     const [trades, setTrades] = useState(false);
-
     const [openForm, setOpenForm] = useState(false);
     const [errorMsg, setErrorMsg] = useState(false);
-
     const [symbol, setSymbol] = useState("");
     const [longShort, setLongShort] = useState("long");
     const [size, setSize] = useState("");
     const [getIn, setGetIn] = useState("");
     const [getOut, setGetOut] = useState("");
     const [tradeReturn, setTradeReturn] = useState("0");
-
 
     const reset = () => {
         setSymbol("");
@@ -26,7 +23,7 @@ export const JournalApp = () => {
         setGetOut("");
     };
 
-     const getDays = (getIn, getOut) => {
+    const getDays = (getIn, getOut) => {
         let start = new Date(getIn);
         let end = new Date(getOut);
         return parseInt((end - start) / (24 * 3600 * 1000));
@@ -38,14 +35,12 @@ export const JournalApp = () => {
             dataFromLS = JSON.parse(localStorage.getItem("trades"));
             dataFromLS.push(newObject);
             localStorage.setItem("trades", JSON.stringify(dataFromLS))
-        } else {
+        }
+        else {
             dataFromLS.push(newObject);
             localStorage.setItem("trades", JSON.stringify(dataFromLS))
         }
     };
-
-
-
     const getReturnInUsd = (getInLS, getOutLS, symbol, newTrade) => {
         getData(getInLS, getOutLS, symbol)
             .then(response => {
@@ -58,7 +53,8 @@ export const JournalApp = () => {
                         saveTradeToLS(newTrade);
                         setTrades(newTrade);
                         return setTradeReturn(tradeReturnValue)
-                    } else if (newTrade.longShort === "short") {
+                    }
+                    else if (newTrade.longShort === "short") {
                         let tradeReturnValue = parseFloat(data.c[0] - data.c[data.c.length - 1] * newTrade.size).toFixed(2).toString() + " $";
                         newTrade.resultValue = tradeReturnValue;
                         saveTradeToLS(newTrade);
@@ -72,22 +68,18 @@ export const JournalApp = () => {
             });
         });
     };
-
-
     const handleOpenForm = () => {
         setOpenForm(!openForm);
     };
-
     const handleSendForm = (e) => {
         e.preventDefault();
         if (!symbol || !size || !getIn || !getOut) {
             setErrorMsg(true);
             return null;
-        }else {
+        }
+        else {
             setErrorMsg(false)
         }
-
-
         let allTrades = JSON.parse(localStorage.getItem("trades"));
         if (allTrades === null) {
             allTrades = [];
@@ -103,16 +95,9 @@ export const JournalApp = () => {
             duration: getDays(getIn, getOut),
         };
         getReturnInUsd((Date.parse(getIn) / 1000), (Date.parse(getOut) / 1000), symbol, newTrade);
-
         document.querySelector("form").reset();
-
         reset();
-
-
     };
-
-
-
     return (
         <>
             <div className={"pageToTransit"}>
@@ -151,7 +136,6 @@ export const JournalApp = () => {
                     </form>
                 </div>
             </section>
-
             <JournalTable addTrades={trades}/>
             </div>
         </>

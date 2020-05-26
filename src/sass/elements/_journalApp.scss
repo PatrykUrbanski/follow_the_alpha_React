@@ -1,7 +1,9 @@
 .journalApp {
   width: 100%;
+
   &__content {
     margin-top: 40px;
+
     .title {
       font-size: 2.2rem;
       margin-bottom: 20px;
@@ -9,6 +11,7 @@
       text-transform: uppercase;
       text-align: center;
     }
+
     h2 {
       font-size: 1.8rem;
       margin-top: 40px;
@@ -16,13 +19,16 @@
         margin-left: 10px;
       }
     }
+
     .titleAdd {
       width: 300px;
       text-align: center;
     }
+
     p {
       text-align: center;
     }
+
     form {
       display: flex;
       flex-direction: column;
@@ -31,6 +37,7 @@
       height: 0;
       overflow: hidden;
       transition: 1s;
+
       .errorMSG {
         margin-top: 10px;
         font-size: 1.2rem;
@@ -40,9 +47,11 @@
         animation: pulse 2s infinite;
         transition: .5s;
       }
+
       .info {
         text-align: center;
       }
+
       .formElem {
         float: right;
         margin-top: -3px;
@@ -51,10 +60,12 @@
         border: none;
         border-bottom: 2px dashed $main-text;
         color: $main-text;
+
         option {
           text-transform: uppercase;
         }
       }
+
       .doneBtn {
         background-color: transparent;
         color: $main-text;
@@ -72,6 +83,7 @@
         }
       }
     }
+
   .tip {
     font-size: 12px;
     opacity: .6;
@@ -95,6 +107,7 @@
         margin-bottom: 20px;
         padding-bottom: 15px;
         border-bottom: 4px solid $main-text;
+
         i {
           position: absolute;
         }
@@ -148,6 +161,7 @@
           }
         }
       }
+
       tfoot {
         text-align: center;
 

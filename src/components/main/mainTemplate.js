@@ -11,15 +11,11 @@ import {Strategies} from "../strategiesSection/strategies";
 export const MainTemplate = () => {
     const [loading, setLoading] = useState(true);
 
-
     useEffect(() => {
         const timeOut = setTimeout(() => {
             setLoading(false)
         }, 2300)
     }, []);
-
-
-
 
     return (
         <>
@@ -41,7 +37,7 @@ export const MainTemplate = () => {
                     </CSSTransition>
                 </TransitionGroup>
             )} />
-            </>
+                </>
             )}
             </>
     )

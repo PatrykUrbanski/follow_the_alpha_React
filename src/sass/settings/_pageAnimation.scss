@@ -8,7 +8,6 @@ html.is-animating .transition-fade {
 
 }
 
-
 .pageToTransit {
   position: absolute;
   top: 100px;
@@ -21,6 +20,7 @@ html.is-animating .transition-fade {
   opacity: 0;
   z-index: 1;
 }
+
 .fade-appear-active,
 .fade-enter.fade-enter-active {
   opacity: 1;
@@ -45,7 +45,6 @@ html.is-animating .transition-fade {
     opacity: 1;
   }
 }
-
 
 @keyframes fadeOutAnimation {
   0% {
@@ -100,4 +99,39 @@ html.is-animating .transition-fade {
   80% { margin-top: 0; }
   99.99% { margin-top: 0; }
   100% { margin-top: -270px; }
+}
+
+@keyframes moveBg {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes load {
+  0% {
+    left: 0;
+    height: 30px;
+    width: 15px
+  }
+  50% {
+    height: 8px;
+    width: 40px
+  }
+  100% {
+    left: 235px;
+    height: 30px;
+    width: 15px
+  }
 }

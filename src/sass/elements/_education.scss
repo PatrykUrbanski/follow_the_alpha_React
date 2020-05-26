@@ -1,17 +1,21 @@
 .educationSection {
   display: flex;
+
   &__content {
     margin: 80px;
     justify-content: center;
+
     .swipeCard {
       background-color: transparent;
       width: 150px;
       display: flex;
       justify-content: center;
+
       img {
         height: 200px;
         width: 150px;
         transition: .3s;
+
         &:hover {
           transform: rotate3d(0, 1, 0, 180deg);
           &::after {

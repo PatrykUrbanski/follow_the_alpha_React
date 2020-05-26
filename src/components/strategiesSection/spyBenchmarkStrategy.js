@@ -1,11 +1,9 @@
-import React, {Component, useEffect, useState} from "react";
-import {ChartDisplay_strategies} from "../chart/ChartDisplay_strategies";
-import {withRouter} from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {ChartDisplayStrategies} from "../chart/ChartDisplay_strategies";
 
 export const SPYBenchmarkStrategy = ({quotes, dates, callback}) => {
     const [prices, setPrices] = useState(false);
     const [dateElems, setDateElems] = useState(false);
-
     const method = "Simple Buy and Hold SP 500 strategy. Based on IVV etf.";
 
     useEffect(() => {
@@ -21,14 +19,10 @@ export const SPYBenchmarkStrategy = ({quotes, dates, callback}) => {
     }, []);
 
     if (!prices || !dateElems) return null;
-
     callback(prices, method);
-
-
-
     return (
         <>
-            <ChartDisplay_strategies dates={dateElems} prices={prices}/>
+            <ChartDisplayStrategies dates={dateElems} prices={prices}/>
         </>
     )
 

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {ChartDisplay_journal} from "../chart/ChartDisplay_journal";
+import {ChartDisplayJournal} from "../chart/ChartDisplay_journal";
 
 export const JournalChart = ({reload, addTrades}) => {
     const [returnArray, setReturnArray] = useState([]);
@@ -23,8 +23,6 @@ export const JournalChart = ({reload, addTrades}) => {
             return modifiedArray
         }
     };
-
-
     useEffect(() => {
         let allTrades = JSON.parse(localStorage.getItem("trades"));
         let tempReturnArr = [];
@@ -40,16 +38,9 @@ export const JournalChart = ({reload, addTrades}) => {
         setReturnArray(tempReturnArr);
         setDatesArray(tempDatesArr);
     }, [reload, addTrades]);
-
-
-
-
-
-
-
     return (
         <>
-            <ChartDisplay_journal dates={datesArray} prices={cumulativeReturn(returnArray)}/>
+            <ChartDisplayJournal dates={datesArray} prices={cumulativeReturn(returnArray)}/>
         </>
     )
 };

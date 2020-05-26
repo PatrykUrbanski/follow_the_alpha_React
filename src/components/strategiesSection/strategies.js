@@ -4,17 +4,13 @@ import {std} from "mathjs";
 
 
 export const Strategies = () => {
-
-
     const [totalReturn, setTotalReturn] = useState(false);
     const [stDev, setStDev] = useState(false);
     const [method, setMethod] = useState("");
-
     const [cardListHeight, setCardListHeight] = useState(false);
     const [baseCardName, setBaseCardName] = useState("Benchmark SPY");
     const [strategyInfoBtn, setStrategyInfoBtn] = useState(true);
     const [strategyAnime, setStrategyAnime] = useState("");
-
     const strategiesList = ["Benchmark SPY", "Bond & Stock Hedged", "Dividend & Bonds", "Growth portfolio", "All Weather portfolio"];
     const [strategyToDisplay, setStrategyToDisplay] = useState(strategiesList[0]);
     const handleShowCards = (e) => {
@@ -32,20 +28,11 @@ export const Strategies = () => {
         e.preventDefault();
         setStrategyInfoBtn(!strategyInfoBtn);
     };
-
-
-
     const dataFromStrategy = (arr, method) => {
         setTotalReturn(parseFloat(arr[arr.length -1]).toFixed(2));
         setStDev(parseFloat(std(arr)).toFixed(2));
         setMethod(method);
     };
-
-
-
-
-
-
     return (
         <>
             <div className={"pageToTransit"}>
@@ -77,13 +64,8 @@ export const Strategies = () => {
                                 <a className={"card"} href="#" onClick={e => handleChangeStrategy(e)} name={strategyElem}>{strategyElem}</a>
                             </li>)}
                     </ul>
-
                 </div>
-
-
-
                 {!totalReturn ? <h1 className={"loadingAnime"}>Loading data... </h1> : (
-
                     <div className="strategies__info">
                         <ul>
                             <li className="infoBtn" onClick={handleStrategyInfoBtn}>Strategy methodology
@@ -94,22 +76,18 @@ export const Strategies = () => {
                             <li>Annual average return:<span>{(totalReturn / 5).toFixed(2) + "%"}</span></li>
                             <li>Average standard deviation<span>{stDev}</span></li>
                             <li>Yearly Sharpe Ratio<span>{(totalReturn / stDev / 5).toFixed(2)}</span></li>
-
                         </ul>
                         <div className="methodologyBox" style={{height: `${strategyInfoBtn ? "0" : "100%"}`}}>
                             <p>{method}</p>
                         </div>
                     </div>
-                ) }
-
-
+                )}
                 <div className="strategies__chart">
                     <div className="strategies__chart__content">
                        <StrategiesAlgo callback={dataFromStrategy} strategyToDisplay={strategyToDisplay}/>
                     </div>
                 </div>
             </section>
-
             </div>
         </>
     )

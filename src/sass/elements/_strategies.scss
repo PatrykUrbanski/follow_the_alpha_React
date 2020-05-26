@@ -1,9 +1,11 @@
 .strategies {
   opacity: 1;
+
   &__page {
     margin-top: 50px;
     margin-bottom: 50px;
     position: relative;
+
     h2 {
       font-size: 2.4rem;
       margin-bottom: 50px;
@@ -12,11 +14,13 @@
       text-align: center;
       line-height: 3rem;
     }
+
     &__text {
       @include tablet {
         display: flex;
         justify-content: space-between;
       }
+
       &--box {
         @include tablet {
           width: 50%;
@@ -25,10 +29,12 @@
           flex-direction: column;
           justify-content: space-between;
         }
+
         p {
           font-size: 1.2rem;
           margin-bottom: 15px;
           line-height: 1.5rem;
+
           &.warn {
             font-size: 1rem;
             color: #e94a45;
@@ -46,6 +52,7 @@
     align-items: center;
 
     .base {
+
       span {
         padding-right: 10px;
       }
@@ -81,8 +88,10 @@
 
   &__info {
     position: relative;
+
     ul {
       margin-top: 20px;
+
       .infoBtn {
         transition: .2s;
         cursor: pointer;
@@ -91,18 +100,21 @@
         @include tablet {
           display: inline-block;
         }
+
         &:hover {
           color: #e94a45;
           transform: scale(1.1);
         }
-        }
+      }
         i {
           margin-left: 10px;
         }
       }
+
       li {
         width: 90%;
         margin-bottom: 10px;
+
         span {
           float: right;
       }
@@ -118,10 +130,11 @@
       top: 15px;
       right: 15px;
       background-color: $main-bg;
-
     }
+
   &__chart {
     margin-top: 50px;
+
     &__content {
       width: 90%;
     }

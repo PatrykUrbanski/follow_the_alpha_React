@@ -1,6 +1,5 @@
 import React from "react";
 
-
 export const AuthorPage = () => {
     return (
         <>
@@ -22,10 +21,7 @@ export const AuthorPage = () => {
                         </div>
                     </div>
                 </div>
-
                 <div className={"ChartAnimation"} style={{backgroundImage: "url(../src/images/bgChart.png)"}}/>
-
-
                 <div className={"authorPage__tech"}>
                     <h1>Project</h1>
                     <div className={"authorPage__tech__box"}>
@@ -46,7 +42,6 @@ export const AuthorPage = () => {
                             <li>WebStorm</li>
                             <li>Adobe XD</li>
                         </ul>
-
                         <div className={"projectDetails"}>
                             <h4>Project details</h4>
                             <ul className={"projectDetails__list"}>
@@ -62,15 +57,12 @@ export const AuthorPage = () => {
                                         <li>... and more</li>
                                     </ul>
                                 </li>
-
                             </ul>
                         </div>
                     </div>
                 </div>
 
             </div>
-
-
         </>
     )
 };

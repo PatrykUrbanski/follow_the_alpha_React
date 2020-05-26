@@ -1,8 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {Line} from "react-chartjs-2";
 
-
-export const ChartDisplay_journal = ({dates, prices}) => {
+export const ChartDisplayJournal = ({dates, prices}) => {
     const lineChart = {
         labels: [0, ...dates],
         datasets: [
@@ -20,7 +19,6 @@ export const ChartDisplay_journal = ({dates, prices}) => {
             }
         ]
     };
-
     return (
         <>
             <div className={"chart container"}>

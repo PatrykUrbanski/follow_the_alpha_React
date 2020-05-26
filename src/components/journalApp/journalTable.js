@@ -1,21 +1,13 @@
 import React, {useEffect, useState} from "react";
-import {Line} from "react-chartjs-2";
 import {JournalChart} from "./journalChart";
 import {demoTrades} from "./demoTrades";
-var uniqid = require('uniqid');
+
+const uniqid = require('uniqid');
 
 export const JournalTable = ({addTrades}) => {
 
     const [reload, setReload] = useState(false);
     const [sum, setSum] = useState(0);
-
-
-
-
-
-
-
-
     let allTrades = JSON.parse(localStorage.getItem("trades"));
 
     useEffect(() => {
@@ -23,7 +15,8 @@ export const JournalTable = ({addTrades}) => {
         let tempSum = 0;
         if (allTrades === null) {
 
-        } else {
+        }
+        else {
             allTrades.forEach(trade => {
                 if (trade != null) tempSum += parseFloat(trade.resultValue);
             });
@@ -50,19 +43,15 @@ export const JournalTable = ({addTrades}) => {
             dataFromLS = JSON.parse(localStorage.getItem("trades"));
             dataFromLS.push(...demoTrades);
             localStorage.setItem("trades", JSON.stringify(dataFromLS))
-        } else {
+        }
+        else {
             dataFromLS.push(...demoTrades);
             localStorage.setItem("trades", JSON.stringify(dataFromLS))
         }
         setReload(prevState => !prevState)
     };
-
-
-
     return (
         <>
-
-
             <section className="tradeTable">
                 <div className="tradeTable__content container">
                     <div className={"tradeTable__content__headlines"}>
@@ -93,7 +82,6 @@ export const JournalTable = ({addTrades}) => {
                             </tr>
                         )
                         })}
-
                         </tbody>
                         <tfoot>
                         <tr className="row">
@@ -103,9 +91,7 @@ export const JournalTable = ({addTrades}) => {
                     </table>
                 </div>
             </section>
-
             <JournalChart reload={reload} addTrades={addTrades}/>
-
         </>
     )
 };

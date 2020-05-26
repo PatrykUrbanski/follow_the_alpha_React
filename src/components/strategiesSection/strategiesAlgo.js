@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from "react";
-import {getData, GetSymbols} from "../api/api"
+import {getData} from "../api/api"
 import {SPYBenchmarkStrategy} from "./spyBenchmarkStrategy";
 import {AllWeatherStrategy} from "./allWeatherStrategy";
 import {GrowthStrategy} from "./growthStrategy";
 import {BondStockHedged} from "./BondStockHedged";
 import {DividendBonds} from "./DividendBonds";
-
 
 export const getFiveYearsFromLastSession = (lastSession) => {
     return lastSession - 3600 * 24 * 365.25 * 5
@@ -15,14 +14,10 @@ export const getLastTradingSession = () => {
     return Math.floor(Date.now() / 1000 - (24 * 3600));
 };
 
-
 export const StrategiesAlgo = ({callback, strategyToDisplay}) => {
     const [symbol, setSymbol] = useState("SPY");
     const [SPY, setSPY] = useState(false);
     const [SPYDates, setSPYDates] = useState(false);
-
-
-
 
     useEffect(() => {
         getData(getFiveYearsFromLastSession(getLastTradingSession()), getLastTradingSession(), symbol)
@@ -34,12 +29,7 @@ export const StrategiesAlgo = ({callback, strategyToDisplay}) => {
             .catch(err => console.log(err))
         }, []);
 
-
-
     if (!SPY || !SPYDates) return null;
-
-
-
 
     return (
         <>
@@ -50,4 +40,4 @@ export const StrategiesAlgo = ({callback, strategyToDisplay}) => {
             {(strategyToDisplay === "Dividend & Bonds") && <DividendBonds dates={SPYDates} callback={callback}/>}
         </>
     )
-}
+};

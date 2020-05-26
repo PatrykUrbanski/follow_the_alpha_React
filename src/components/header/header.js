@@ -1,25 +1,19 @@
 import React, {useState} from "react";
-import {Link, NavLink} from "react-router-dom";
-import logoIcon from "../../images/logo1.png"
+import {Link} from "react-router-dom";
 
 export const Header = () => {
     const [openMenu, setOpenMenu] = useState("");
-
     const handleOpenNav = (e) => {
         e.preventDefault();
         setOpenMenu("sidebarWidth")
     };
-
     const handleCloseNav = (e) => {
         e.preventDefault();
         setOpenMenu("");
     };
-
     document.querySelector("body").addEventListener("click", () => {
         setOpenMenu("");
     });
-
-
     return (
         <>
             <header className="header">

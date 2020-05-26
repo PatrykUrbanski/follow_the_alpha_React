@@ -60,4 +60,4 @@ export const demoTrades = [{
     getOut: "2018-05-05",
     duration: 31,
     resultValue: "-21.20 $"
-}]
+}];

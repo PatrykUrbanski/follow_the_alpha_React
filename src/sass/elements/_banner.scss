@@ -7,6 +7,7 @@
   position: relative;
   z-index: 2;
   margin-top: -50px;
+
   .wordCarousel {
     overflow: hidden;
     position: relative;
@@ -39,6 +40,7 @@
       }
     }
   }
+
   .arrow {
     position: fixed;
     bottom: 50px;
@@ -50,6 +52,7 @@
       animation: pulse 1s infinite;
       box-shadow: 0 0 2px 2px $main-text;
     }
+
     span {
       display: block;
       width: 10px;
