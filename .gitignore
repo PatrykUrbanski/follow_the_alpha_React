@@ -104,7 +104,7 @@ dist
 .tern-port
 
 
-scss/
+css/
 .idea
 package.json
 package-lock.json
