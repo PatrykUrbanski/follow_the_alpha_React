@@ -19,7 +19,8 @@
                                       
                                     
 ### Build with:
-- **React.js** // hooks// arrow Function components// react-router,
+- **React.js** // hooks// react-router,
 - **ES6**
 - **SASS**
 - **WebPack**
+- **fetch API**
