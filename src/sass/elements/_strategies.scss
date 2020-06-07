@@ -1,0 +1,148 @@
+.strategies {
+  opacity: 1;
+
+  &__page {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    position: relative;
+
+    h2 {
+      font-size: 2.4rem;
+      margin-bottom: 50px;
+      text-transform: uppercase;
+      letter-spacing: 15px;
+      text-align: center;
+      line-height: 3rem;
+    }
+
+    &__text {
+      @include tablet {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &--box {
+        @include tablet {
+          width: 50%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        p {
+          font-size: 1.2rem;
+          margin-bottom: 15px;
+          line-height: 1.5rem;
+
+          &.warn {
+            font-size: 1rem;
+            color: #e94a45;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .base {
+
+      span {
+        padding-right: 10px;
+      }
+    }
+
+    ul {
+      height: 0;
+      overflow: hidden;
+      z-index: 1;
+      transition: 1s;
+    }
+
+    .card {
+      text-decoration: none;
+      color: $main-text;
+      display: block;
+      padding: 15px 20px;
+      border: 2px solid $main-text;
+      border-radius: 25px;
+      text-align: center;
+      margin: 8px;
+      transition: .3s;
+
+      &:hover {
+        border: 2px solid rgba(187, 187, 187, .9);
+        background-color: rgba(187, 187, 187, .9);
+        box-shadow: 0 0 1px 2px rgba(187, 187, 187, .9);
+        color: black;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__info {
+    position: relative;
+
+    ul {
+      margin-top: 20px;
+
+      .infoBtn {
+        transition: .2s;
+        cursor: pointer;
+        width: 180px;
+        display: none;
+        @include tablet {
+          display: inline-block;
+        }
+
+        &:hover {
+          color: #e94a45;
+          transform: scale(1.1);
+        }
+      }
+        i {
+          margin-left: 10px;
+        }
+      }
+
+      li {
+        width: 90%;
+        margin-bottom: 10px;
+
+        span {
+          float: right;
+      }
+    }
+  }
+    .methodologyBox {
+      display: inline-block;
+      height: 0;
+      overflow: hidden;
+      width: 50%;
+      position: absolute;
+      z-index: 2;
+      top: 15px;
+      right: 15px;
+      background-color: $main-bg;
+    }
+
+  &__chart {
+    margin-top: 50px;
+
+    &__content {
+      width: 90%;
+    }
+  }
+}
+
+.loadingAnime {
+  font-size: 30px;
+  font-weight: 700;
+  animation: pulse 1.5s infinite;
+}

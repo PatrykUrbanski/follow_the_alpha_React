@@ -1,0 +1,44 @@
+.banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 90px);
+  position: relative;
+  z-index: 2;
+  margin-top: -50px;
+
+  .wordCarousel {
+    overflow: hidden;
+    position: relative;
+    font-size: 3rem;
+
+    &__wrap {
+      overflow: hidden;
+      position: relative;
+      height: 65px;
+      margin-top: 20px;
+
+      .flip4 {
+        animation-name: flip4;
+        animation-duration: 13s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+
+        .list {
+          height: 65px;
+          position: relative;
+
+          &__word {
+            display: block;
+            height: 45px;
+            margin-bottom: 45px;
+            text-align: center;
+
+          }
+        }
+      }
+    }
+  }
+}
+

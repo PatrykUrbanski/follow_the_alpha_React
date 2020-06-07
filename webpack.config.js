@@ -38,7 +38,6 @@ module.exports = {
                 exclude: /node_modules/,
                 use: [
                     'style-loader',
-                    // MiniCSS.loader,
                     {
                         loader:'css-loader',
                         options: {
@@ -55,7 +54,7 @@ module.exports = {
                             sourceMap: true
                         }
                     },
-                    'scss-loader'
+                    'sass-loader'
                 ]
             },
             {
