@@ -1,15 +1,7 @@
-import React, {createRef, useState} from "react";
+import React from "react";
 
 
 export const Banner = () => {
-    const [scrollY, setScrollY] = useState(800);
-
-    const handleClick = (e) => {
-        e.preventDefault();
-        setScrollY( scrollY + 800);
-        window.scrollTo(0, scrollY);
-    };
-
     return (
         <>
             <section className="banner container">
@@ -26,11 +18,7 @@ export const Banner = () => {
                         </div>
                     </div>
                 </div>
-                <a href={"#"} onClick={e => handleClick(e)} className={"arrow"}>
-                    <span/>
-                    <span/>
-                </a>
             </section>
         </>
     )
-}
+};

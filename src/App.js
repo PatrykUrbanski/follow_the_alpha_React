@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./sass/main.scss";
+import "./scss/main.scss";
 import {MainTemplate} from "./components/main/mainTemplate";
 import {ParallaxProvider} from "react-scroll-parallax/cjs";
 import {BrowserRouter} from "react-router-dom";
